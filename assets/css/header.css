@@ -1,0 +1,31 @@
+.header .header-banner {
+    position: relative;
+}
+
+.header .header-banner::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.header .header-banner img {
+    width: 100%;
+    height: auto;
+}
+
+.header .header-banner .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    color: #c5161d;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
