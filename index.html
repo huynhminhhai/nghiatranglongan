@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="./assets/library/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/library/slick/slick/slick.css">
     <link rel="stylesheet" href="./assets/library/slick/slick/slick-theme.css">
+    <link rel="stylesheet" href="./assets/library/flatpickr-master/flatpickr.min.css">
 
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/header.css">
@@ -17,6 +19,7 @@
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/home.css">
 </head>
+
 <body>
     <header class="header">
         <div class="header-banner">
@@ -24,9 +27,128 @@
                 <img src="./assets/images/banner.jpg" alt="banner">
             </div>
             <h1 class="text">HỆ THỐNG QUẢN LÝ NGHĨA TRANG TỈNH LONG AN</h1>
+            <div class="noti">Hệ thống đang được phát triển, hoàn thiện</div>
+        </div>
+        <div class="header-nav">
+            <div class="container">
+                <nav class="navbar">
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="/index.html">Trang chủ</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/index.html">Bản đồ</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/index.html">Liệt sĩ</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/index.html">Mẹ VNAH</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/index.html">Giới thiệu</a>
+                        </li>
+                    </ul>
+                    <ul class="authen-list">
+                        <button class="button primary btn-register">
+                            <div class="icon">
+                                <img src="./assets/images/clock.svg" alt="clock icon">
+                            </div>
+                            <div class="text">Đăng ký viếng thăm </div>
+                        </button>
+                        <button class="button secondary">
+                            <div class="icon"></div>
+                            <div class="text">Đăng ký</div>
+                        </button>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
     <main>
+        <div class="popup-blur"></div>
+        <div class="popup register">
+            <div class="popup-wrapper">
+                <div class="row">
+                    <div class="col-12 col-lg-7">
+                        <div class="popup-left">
+                            <div class="title">Đăng Ký Viếng Thăm</div>
+                            <form class="row g-3 needs-validation" novalidate id="form-register">
+                                <div class="col-md-6 position-relative">
+                                    <label for="input-visitor" class="form-label"><span>*</span> Tên/nhóm người viếng thăm:</label>
+                                    <input type="text" class="form-control" id="input-visitor" placeholder="Tên/nhóm người viếng thăm" required>
+                                    <div class="invalid-tooltip">
+                                        Họ tên không được trống
+                                    </div>
+                                </div>
+                                <div class="col-md-6 position-relative">
+                                    <label for="input-phone" class="form-label"><span>*</span> SĐT:</label>
+                                    <input type="tel" maxlength="10" pattern="^\+?[0-9]\d{1,14}$" class="form-control" id="input-phone" placeholder="Số điện thoại" required>
+                                    <div class="invalid-tooltip">
+                                        SĐT không hợp lệ
+                                    </div>
+                                </div>
+                                <div class="col-md-6 position-relative">
+                                    <label for="input-family" class="form-label">Thân nhân của:</label>
+                                    <input type="text" class="form-control" id="input-family" placeholder="Tên liệt sĩ">
+                                </div>
+                                <div class="col-md-6 position-relative">
+                                    <label for="input-role" class="form-label">Quan hệ với liện sĩ:</label>
+                                    <select class="form-select" id="input-role">
+                                      <option selected disabled value="">Quan hệ với liệt sĩ</option>
+                                      <option value="1">Con</option>
+                                      <option value="2">Bố</option>
+                                      <option value="3">Mẹ</option>
+                                      <option value="4">Vợ</option>
+                                      <option value="5">Anh</option>
+                                      <option value="6">Em</option>
+                                      <option value="7">Bà nội</option>
+                                      <option value="8">Chồng</option>
+                                      <option value="9">Cô</option>
+                                      <option value="10">Bố nuôi</option>
+                                    </select>
+                                    <div class="invalid-tooltip">
+                                      Please select a valid state.
+                                    </div>
+                                </div>
+                                <div class="col-md-12 position-relative">
+                                    <label for="input-datetime" class="form-label"><span>*</span> Thời gian:</label>                   
+                                        <input type="text" class="form-control" id="input-datetime" placeholder="Thời gian viếng thăm" required>
+                                        <div class="invalid-tooltip">
+                                            Thời gian không được trống
+                                        </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="input-img" class="form-label">Ảnh giấy giới thiệu:</label>
+                                    <input type="file" id="input-img" multiple accept="image/*" style="display: none;">
+                                    <div id="imagePreviewContainer">
+                                        <div id="addImageBtn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="#313131" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 12h-6m0 0H6m6 0V6m0 6v6"/></svg></div>
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex gap-3 justify-content-end mt-4">
+                                    <div class="button secondary close">
+                                        <div class="icon">
+                                        </div>
+                                        <div class="text">Đóng</div>
+                                    </div>
+                                    <button class="button primary" type="submit">
+                                        <div class="icon">
+                                            <img src="./assets/images/sent.svg" alt="submit">
+                                        </div>
+                                        <div class="text">Gửi</div>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <div class="popup-right">
+                            <img src="./assets/images/banner-2.jpeg" alt="Nghia Trang Long An">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         main
     </main>
     <footer>
@@ -39,8 +161,10 @@
 <script src="./assets/library/slick/slick/slick.min.js"></script>
 <script src="./assets/library/validate/jquery.validate.js"></script>
 <script src="./assets/library/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="./assets/library/flatpickr-master/flatpickr.js"></script>
 
 <!-- js -->
 <script src="./assets/js/main.js"></script>
 <script src="./assets/js/home.js"></script>
+
 </html>
