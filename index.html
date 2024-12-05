@@ -75,15 +75,18 @@
                             <div class="title">Đăng Ký Viếng Thăm</div>
                             <form class="row g-3 needs-validation" novalidate id="form-register">
                                 <div class="col-md-6 position-relative">
-                                    <label for="input-visitor" class="form-label"><span>*</span> Tên/nhóm người viếng thăm:</label>
-                                    <input type="text" class="form-control" id="input-visitor" placeholder="Tên/nhóm người viếng thăm" required>
+                                    <label for="input-visitor" class="form-label"><span>*</span> Tên/nhóm người viếng
+                                        thăm:</label>
+                                    <input type="text" class="form-control" id="input-visitor"
+                                        placeholder="Tên/nhóm người viếng thăm" required>
                                     <div class="invalid-tooltip">
                                         Họ tên không được trống
                                     </div>
                                 </div>
                                 <div class="col-md-6 position-relative">
                                     <label for="input-phone" class="form-label"><span>*</span> SĐT:</label>
-                                    <input type="tel" maxlength="10" pattern="^\+?[0-9]\d{1,14}$" class="form-control" id="input-phone" placeholder="Số điện thoại" required>
+                                    <input type="tel" maxlength="10" pattern="^\+?[0-9]\d{1,14}$" class="form-control"
+                                        id="input-phone" placeholder="Số điện thoại" required>
                                     <div class="invalid-tooltip">
                                         SĐT không hợp lệ
                                     </div>
@@ -95,34 +98,40 @@
                                 <div class="col-md-6 position-relative">
                                     <label for="input-role" class="form-label">Quan hệ với liện sĩ:</label>
                                     <select class="form-select" id="input-role">
-                                      <option selected disabled value="">Quan hệ với liệt sĩ</option>
-                                      <option value="1">Con</option>
-                                      <option value="2">Bố</option>
-                                      <option value="3">Mẹ</option>
-                                      <option value="4">Vợ</option>
-                                      <option value="5">Anh</option>
-                                      <option value="6">Em</option>
-                                      <option value="7">Bà nội</option>
-                                      <option value="8">Chồng</option>
-                                      <option value="9">Cô</option>
-                                      <option value="10">Bố nuôi</option>
+                                        <option selected disabled value="">Quan hệ với liệt sĩ</option>
+                                        <option value="1">Con</option>
+                                        <option value="2">Bố</option>
+                                        <option value="3">Mẹ</option>
+                                        <option value="4">Vợ</option>
+                                        <option value="5">Anh</option>
+                                        <option value="6">Em</option>
+                                        <option value="7">Bà nội</option>
+                                        <option value="8">Chồng</option>
+                                        <option value="9">Cô</option>
+                                        <option value="10">Bố nuôi</option>
                                     </select>
                                     <div class="invalid-tooltip">
-                                      Please select a valid state.
+                                        Please select a valid state.
                                     </div>
                                 </div>
                                 <div class="col-md-12 position-relative">
-                                    <label for="input-datetime" class="form-label"><span>*</span> Thời gian:</label>                   
-                                        <input type="text" class="form-control" id="input-datetime" placeholder="Thời gian viếng thăm" required>
-                                        <div class="invalid-tooltip">
-                                            Thời gian không được trống
-                                        </div>
+                                    <label for="input-datetime" class="form-label"><span>*</span> Thời gian:</label>
+                                    <input type="text" class="form-control" id="input-datetime"
+                                        placeholder="Thời gian viếng thăm" required>
+                                    <div class="invalid-tooltip">
+                                        Thời gian không được trống
+                                    </div>
                                 </div>
                                 <div class="col-12">
                                     <label for="input-img" class="form-label">Ảnh giấy giới thiệu:</label>
                                     <input type="file" id="input-img" multiple accept="image/*" style="display: none;">
                                     <div id="imagePreviewContainer">
-                                        <div id="addImageBtn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="#313131" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 12h-6m0 0H6m6 0V6m0 6v6"/></svg></div>
+                                        <div id="addImageBtn"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                height="24" viewBox="0 0 24 24">
+                                                <path fill="none" stroke="#313131" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="1.5"
+                                                    d="M18 12h-6m0 0H6m6 0V6m0 6v6" />
+                                            </svg></div>
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex gap-3 justify-content-end mt-4">
@@ -149,7 +158,283 @@
                 </div>
             </div>
         </div>
-        main
+        <section class="news">
+            <div class="container">
+                <h2 class="section-title">Tin tức - Sự kiện</h2>
+                <div class="news-list">
+                    <div class="news-item">
+                        <div class="card">
+                            <div class="card-wrap">
+                                <div class="card-img">
+                                    <img class="card-img-top lazyloaded"
+                                        src="./assets/images/news-1.jpg"
+                                        alt="News">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-top">
+                                        <a href="#">
+                                            <h3 class="title">Tin tức</h3>
+                                        </a> 
+                                        <span class="date">07/08/2024 14:03</span>
+                                    </div>
+                                    <a href="#">
+                                        <h3 class="card-title">Kỷ niệm 77 năm Ngày Thương binh - Liệt sỹ</h3>
+                                    </a>
+                                    <a href="#" class="button primary d-flex d-lg-none">
+                                        <div class="icon"></div>
+                                        <div class="text">Đọc thêm</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="#" class="button primary d-none d-lg-flex">
+                                <div class="icon"></div>
+                                <div class="text">Đọc thêm</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="card">
+                            <div class="card-wrap">
+                                <div class="card-img">
+                                    <img class="card-img-top lazyloaded"
+                                        src="./assets/images/news-2.jpg"
+                                        alt="News">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-top">
+                                        <a href="#">
+                                            <h3 class="title">Sự kiện</h3>
+                                        </a> 
+                                        <span class="date">07/08/2024 14:03</span>
+                                    </div>
+                                    <a href="#">
+                                        <h3 class="card-title">Đoàn viên, thanh niên ra quân dọn vệ sinh tại Nghĩa trang liệt sĩ tỉnh Long An</h3>
+                                    </a>
+                                    <a href="#" class="button primary d-flex d-lg-none">
+                                        <div class="icon"></div>
+                                        <div class="text">Đọc thêm</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="#" class="button primary d-none d-lg-flex">
+                                <div class="icon"></div>
+                                <div class="text">Đọc thêm</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="card">
+                            <div class="card-wrap">
+                                <div class="card-img">
+                                    <img class="card-img-top lazyloaded"
+                                        src="./assets/images/news-3.jpg"
+                                        alt="News">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-top">
+                                        <a href="#">
+                                            <h3 class="title">Tin tức</h3>
+                                        </a> 
+                                        <span class="date">07/08/2024 14:03</span>
+                                    </div>
+                                    <a href="#">
+                                        <h3 class="card-title">Những cuộc hội ngộ xúc động tại Nghĩa trang liệt sĩ tỉnh Long An</h3>
+                                    </a>
+                                    <a href="#" class="button primary d-flex d-lg-none">
+                                        <div class="icon"></div>
+                                        <div class="text">Đọc thêm</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="#" class="button primary d-none d-lg-flex">
+                                <div class="icon"></div>
+                                <div class="text">Đọc thêm</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="card">
+                            <div class="card-wrap">
+                                <div class="card-img">
+                                    <img class="card-img-top lazyloaded"
+                                        src="./assets/images/news-1.jpg"
+                                        alt="News">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-top">
+                                        <a href="#">
+                                            <h3 class="title">Tin tức</h3>
+                                        </a> 
+                                        <span class="date">07/08/2024 14:03</span>
+                                    </div>
+                                    <a href="#">
+                                        <h3 class="card-title">Kỷ niệm 77 năm Ngày Thương binh - Liệt sỹ</h3>
+                                    </a>
+                                    <a href="#" class="button primary d-flex d-lg-none">
+                                        <div class="icon"></div>
+                                        <div class="text">Đọc thêm</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="#" class="button primary d-none d-lg-flex">
+                                <div class="icon"></div>
+                                <div class="text">Đọc thêm</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="card">
+                            <div class="card-wrap">
+                                <div class="card-img">
+                                    <img class="card-img-top lazyloaded"
+                                        src="./assets/images/news-2.jpg"
+                                        alt="News">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-top">
+                                        <a href="#">
+                                            <h3 class="title">Sự kiện</h3>
+                                        </a> 
+                                        <span class="date">07/08/2024 14:03</span>
+                                    </div>
+                                    <a href="#">
+                                        <h3 class="card-title">Đoàn viên, thanh niên ra quân dọn vệ sinh tại Nghĩa trang liệt sĩ tỉnh Long An</h3>
+                                    </a>
+                                    <a href="#" class="button primary d-flex d-lg-none">
+                                        <div class="icon"></div>
+                                        <div class="text">Đọc thêm</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="#" class="button primary d-none d-lg-flex">
+                                <div class="icon"></div>
+                                <div class="text">Đọc thêm</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="card">
+                            <div class="card-wrap">
+                                <div class="card-img">
+                                    <img class="card-img-top lazyloaded"
+                                        src="./assets/images/news-3.jpg"
+                                        alt="News">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-top">
+                                        <a href="#">
+                                            <h3 class="title">Tin tức</h3>
+                                        </a> 
+                                        <span class="date">07/08/2024 14:03</span>
+                                    </div>
+                                    <a href="#">
+                                        <h3 class="card-title">Những cuộc hội ngộ xúc động tại Nghĩa trang liệt sĩ tỉnh Long An</h3>
+                                    </a>
+                                    <a href="#" class="button primary d-flex d-lg-none">
+                                        <div class="icon"></div>
+                                        <div class="text">Đọc thêm</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="#" class="button primary d-none d-lg-flex">
+                                <div class="icon"></div>
+                                <div class="text">Đọc thêm</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="card">
+                            <div class="card-wrap">
+                                <div class="card-img">
+                                    <img class="card-img-top lazyloaded"
+                                        src="./assets/images/news-1.jpg"
+                                        alt="News">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-top">
+                                        <a href="#">
+                                            <h3 class="title">Tin tức</h3>
+                                        </a> 
+                                        <span class="date">07/08/2024 14:03</span>
+                                    </div>
+                                    <a href="#">
+                                        <h3 class="card-title">Kỷ niệm 77 năm Ngày Thương binh - Liệt sỹ</h3>
+                                    </a>
+                                    <a href="#" class="button primary d-flex d-lg-none">
+                                        <div class="icon"></div>
+                                        <div class="text">Đọc thêm</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="#" class="button primary d-none d-lg-flex">
+                                <div class="icon"></div>
+                                <div class="text">Đọc thêm</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="card">
+                            <div class="card-wrap">
+                                <div class="card-img">
+                                    <img class="card-img-top lazyloaded"
+                                        src="./assets/images/news-2.jpg"
+                                        alt="News">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-top">
+                                        <a href="#">
+                                            <h3 class="title">Sự kiện</h3>
+                                        </a> 
+                                        <span class="date">07/08/2024 14:03</span>
+                                    </div>
+                                    <a href="#">
+                                        <h3 class="card-title">Đoàn viên, thanh niên ra quân dọn vệ sinh tại Nghĩa trang liệt sĩ tỉnh Long An</h3>
+                                    </a>
+                                    <a href="#" class="button primary d-flex d-lg-none">
+                                        <div class="icon"></div>
+                                        <div class="text">Đọc thêm</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="#" class="button primary d-none d-lg-flex">
+                                <div class="icon"></div>
+                                <div class="text">Đọc thêm</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="card">
+                            <div class="card-wrap">
+                                <div class="card-img">
+                                    <img class="card-img-top lazyloaded"
+                                        src="./assets/images/news-3.jpg"
+                                        alt="News">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-top">
+                                        <a href="#">
+                                            <h3 class="title">Tin tức</h3>
+                                        </a> 
+                                        <span class="date">07/08/2024 14:03</span>
+                                    </div>
+                                    <a href="#">
+                                        <h3 class="card-title">Những cuộc hội ngộ xúc động tại Nghĩa trang liệt sĩ tỉnh Long An</h3>
+                                    </a>
+                                    <a href="#" class="button primary d-flex d-lg-none">
+                                        <div class="icon"></div>
+                                        <div class="text">Đọc thêm</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="#" class="button primary d-none d-lg-flex">
+                                <div class="icon"></div>
+                                <div class="text">Đọc thêm</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         footer

@@ -39,11 +39,11 @@
     --white-color: #fff;
     --black-color: #313131;
     --red-color: #c5161d;
-    --blue-color: #2196f3;
-    --button-color: #52b1ff;
+    --blue-color: #a01c10;
+    --button-color: #bd8986;
     --fs-h-1: 54px;
     --lh-h-1: 64px;
-    --fs-h-2: 36px;
+    --fs-h-2: 32px;
     --lh-h-2: 40px;
     --fs-h-3: 24px;
     --lh-h-3: 30px;
@@ -102,6 +102,7 @@ input[type="number"] {
     border-radius: 8px;
     height: 42px;
     cursor: pointer;
+    width: fit-content;
 }
 
 .button .text {
@@ -308,4 +309,11 @@ select option:first-child {
     /* Màu chữ của mục mặc định */
     font-style: italic;
     /* Chữ nghiêng */
+}
+
+.section-title {
+    font-size: var(--fs-h-2);
+    line-height: var(--lh-h-2);
+    text-align: center;
+    color: var(--blue-color);
 }
