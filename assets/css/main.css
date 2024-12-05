@@ -137,7 +137,7 @@ input[type="number"] {
     transition: all 0.3s linear;
 }
 
-button.secondary:hover {
+.button.secondary:hover {
     background-color: var(--blue-color);
     border: 2px solid var(--blue-color);
     color: var(--white-color);
@@ -316,4 +316,37 @@ select option:first-child {
     line-height: var(--lh-h-2);
     text-align: center;
     color: var(--blue-color);
+}
+
+.seemore-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.seemore-group .seemore {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.seemore-group .seemore .text {
+    font-size: var(--fs-h-4);
+    line-height: 1;
+    font-weight: var(--fw-bold);
+    color: var(--blue-color);
+}
+
+.seemore-group .seemore .icon {
+    transition: all 0.3s linear;
+}
+
+.seemore-group .seemore:hover .icon {
+    transform: translateX(5px);
+}
+
+.seemore-group .seemore .icon img {
+    width: 25px;
+    height: auto;
 }

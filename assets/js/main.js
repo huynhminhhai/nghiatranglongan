@@ -81,4 +81,9 @@ $(document).ready(function () {
         $('.popup.register').removeClass('active')
         $('.popup-blur').removeClass('active')
     });
+
+    $('.popup-blur').click(function () {
+        $('.popup.register').removeClass('active')
+        $('.popup-blur').removeClass('active')
+    });
 });
