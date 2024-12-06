@@ -147,3 +147,21 @@
     margin-top: 40px;
     border-block: 2px solid var(--blue-color);
 }
+
+/*
+* About
+*/
+
+.about .section-title {
+    margin-bottom: 40px;
+}
+
+.about .banner img {
+    width: 100%;
+    height: auto;
+}
+
+.about .content {
+    font-size: var(--fs-p);
+    line-height: var(--lh-p);
+}
