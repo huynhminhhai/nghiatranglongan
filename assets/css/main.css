@@ -467,3 +467,88 @@ select option:first-child {
 #map {
     height: 600px;
 }
+
+/*
+* Pagination custom
+*/
+
+.group-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+    border-top: 1px solid var(--button-color);
+    padding-block: 20px;
+}
+
+.group-pagination .wrap {
+    display: flex;
+    gap: 30px;
+}
+
+.pagination-custom ul {
+    display: flex;
+    gap: 6px;
+}
+
+.pagination-custom ul li a {
+    font-size: var(--fs-h-5);
+    line-height: 1;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: var(--black-color);
+}
+
+.pagination-custom .page-item {
+    background-color: #e1e1e1;
+    border-radius: 4px;
+    transition: all 0.3s linear;
+}
+
+.pagination-custom .page-item.active {
+    background-color: var(--blue-color);
+}
+
+.pagination-custom .page-item.active a {
+    color: var(--white-color);
+
+}
+
+.select-custom {
+    height: 30px;
+    padding: 0 8px;
+    border-radius: 4px;
+}
+
+.group-pagination .total {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.select-custom option:first-child {
+    color: unset;
+    font-style: normal;
+}
+
+.group-filter  {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.group-filter .wrap-month {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.group-filter .wrap-month .text {
+    font-size: var(--fs-h-4);
+    font-weight: 500;
+}
