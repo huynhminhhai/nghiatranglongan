@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới thiệu - Quản lý nghĩa trang</title>
+    <title>Bản đồ - Quản lý nghĩa trang</title>
     <link rel="icon" type="image/png" href="./assets/images/favicon.ico">
 
     <!-- library -->
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./assets/library/slick/slick/slick.css">
     <link rel="stylesheet" href="./assets/library/slick/slick/slick-theme.css">
     <link rel="stylesheet" href="./assets/library/flatpickr-master/flatpickr.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/header.css">
@@ -158,29 +159,10 @@
                 </div>
             </div>
         </div>
-        <section class="about">
+        <section class="map">
             <div class="container">
-                <h2 class="section-title">Nghĩa trang liệt sĩ tỉnh Long An</h2>
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <div class="content">
-                            <p>
-                                <strong>Nghĩa trang liệt sĩ tỉnh Long An</strong> nằm tại phường 5, thành phố Tân An, tỉnh Long An. Tại đây có khoảng gần 3500 mộ liệt sĩ có danh tính. Quý thân nhân cần tìm hiểu thêm về mộ liệt sĩ nơi đây xin vui lòng liên hệ Ban quản lý Nghĩa trang.
-                            </p>
-                            <p>
-                                <strong>Địa chỉ:</strong> QL1A, Phường 5, Tp Tân An, tỉnh Long An
-                            </p>
-                            <p>
-                                <strong>Giờ làm việc:</strong> Mở cửa cả ngày, từ thứ Hai đến Chủ Nhật (Giờ làm việc có thể thay đổi vào dịp lễ, tết)
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="banner">
-                            <img src="./assets/images/banner-2.jpeg" alt="NGHĨA TRANG LIỆT SĨ TỈNH LONG AN">
-                        </div>
-                    </div>
-                </div>
+                <h2 class="section-title">Bản đồ nghĩa trang liệt sĩ tỉnh Long An</h2>
+                <div id="map"></div>
             </div>
         </section>
         <section class="news">
@@ -322,9 +304,11 @@
 <script src="./assets/library/validate/jquery.validate.js"></script>
 <script src="./assets/library/bootstrap/bootstrap.bundle.min.js"></script>
 <script src="./assets/library/flatpickr-master/flatpickr.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <!-- js -->
 <script src="./assets/js/main.js"></script>
 <script src="./assets/js/home.js"></script>
+<script src="./assets/js/map.js"></script>
 
 </html>

@@ -152,7 +152,8 @@
 * About
 */
 
-.about .section-title {
+.about .section-title,
+.map .section-title {
     margin-bottom: 40px;
 }
 

@@ -459,3 +459,11 @@ select option:first-child {
     cursor: pointer;
     border: 1px solid var(--button-color);
 }
+
+/*
+* Map
+*/
+
+#map {
+    height: 600px;
+}
