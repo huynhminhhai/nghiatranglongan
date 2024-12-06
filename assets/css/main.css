@@ -83,6 +83,10 @@ h1 {
     font-weight: 700;
 }
 
+section {
+    padding: 80px 0;
+}
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -349,4 +353,103 @@ select option:first-child {
 .seemore-group .seemore .icon img {
     width: 25px;
     height: auto;
+}
+
+/* 
+* Search
+*/
+
+.search-group {
+    display: flex;
+    justify-content: end;
+}
+
+.search-group .form-search {
+    border-radius: 29px;
+    background: #fff;
+    width: 30vw;
+}
+
+.search-group .form-control {
+    line-height: 1;
+    height: 48px;
+    border-radius: 8px !important;
+}
+
+
+.search-group .input-group {
+    gap: 10px;
+}
+
+.search-group .button-search {
+    background-color: var(--blue-color);
+    border: none;
+    border-radius: 8px !important;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+* Pagination
+*/
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.pagination-container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.pagination-container .pagi-btn, .pagination-container .pagi-page {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+
+.pagi-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination-container .pagi-page.active {
+    background-color: var(--blue-color);
+    border: 1px solid var(--blue-color);
+    font-weight: 500;
+    color: #fff;
+}
+
+.pagination-container .pagi-page {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: #C8CCD1;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.3s linear;
+}
+
+.pagination-container .pagi-page:hover {
+    border: 1px solid var(--button-color);
+    color: var(--button-color);
+    font-weight: 500;
+    transition: all 0.3s linear;
+}
+
+.pagi-btn {
+    cursor: pointer;
+    border: 1px solid var(--button-color);
 }
