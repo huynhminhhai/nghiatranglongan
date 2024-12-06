@@ -231,6 +231,12 @@ input[type="number"] {
     color: #797979;
 }
 
+.form-control:focus,
+.form-select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 .popup .form-control::placeholder {
     color: #797979;
 }
@@ -253,8 +259,8 @@ input[type="number"] {
 .image-preview,
 #addImageBtn {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border: 1px solid #ccc;
     border-radius: 5px;

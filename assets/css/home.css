@@ -101,3 +101,49 @@
 .news-item .button {
     margin-top: 25px;
 }
+
+/*
+* NEWS DETAIL
+*/
+
+.news-detail {
+    font-size: var(--fs-p);
+    line-height: var(--lh-p);
+}
+
+.news-detail .content {
+    padding: 80px 60px 60px;
+}
+
+.news-detail .type {
+    font-size: 20px;
+    color: var(--button-color);
+    font-weight: 500;
+    line-height: 30px;
+}
+
+.news-detail .title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--blue-color);
+    margin: 10px 0;
+}
+
+.news-detail .date {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--blue-color);
+}
+
+.news-detail img {
+    width: 100%;
+    height: auto;
+}
+
+.news-detail .detail {
+    padding-block: 40px;
+    margin-top: 40px;
+    border-block: 2px solid var(--blue-color);
+}
