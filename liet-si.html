@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liệt sĩ - Quản lý nghĩa trang</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.ico">
+
+    <!-- library -->
+    <link rel="stylesheet" href="./assets/library/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/library/slick/slick/slick.css">
+    <link rel="stylesheet" href="./assets/library/slick/slick/slick-theme.css">
+    <link rel="stylesheet" href="./assets/library/flatpickr-master/flatpickr.min.css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/home.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-banner">
+            <div class="banner">
+                <img src="./assets/images/banner.jpg" alt="banner">
+            </div>
+            <h1 class="text">HỆ THỐNG QUẢN LÝ NGHĨA TRANG TỈNH LONG AN</h1>
+            <div class="noti">Hệ thống đang được phát triển, hoàn thiện</div>
+        </div>
+        <div class="header-nav">
+            <div class="container">
+                <nav class="navbar">
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="/index.html">Trang chủ</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/gioi-thieu.html">Giới thiệu</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/liet-si.html">Liệt sĩ</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/index.html">Mẹ VNAH</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/ban-do.html">Bản đồ</a>
+                        </li>
+                    </ul>
+                    <ul class="authen-list">
+                        <button class="button primary btn-register">
+                            <div class="icon">
+                                <img src="./assets/images/clock.svg" alt="clock icon">
+                            </div>
+                            <div class="text">Đăng ký viếng thăm </div>
+                        </button>
+                        <a href="#" class="button secondary">
+                            <div class="icon"></div>
+                            <div class="text">Đăng ký</div>
+                        </a>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="popup-blur"></div>
+        <div class="popup register">
+            <div class="popup-wrapper">
+                <div class="row">
+                    <div class="col-12 col-lg-7">
+                        <div class="popup-left">
+                            <div class="title">Đăng Ký Viếng Thăm</div>
+                            <form class="row g-3 needs-validation" novalidate id="form-register">
+                                <div class="col-md-6 position-relative">
+                                    <label for="input-visitor" class="form-label"><span>*</span> Tên/nhóm người viếng
+                                        thăm:</label>
+                                    <input type="text" class="form-control" id="input-visitor"
+                                        placeholder="Tên/nhóm người viếng thăm" required>
+                                    <div class="invalid-tooltip">
+                                        Họ tên không được trống
+                                    </div>
+                                </div>
+                                <div class="col-md-6 position-relative">
+                                    <label for="input-phone" class="form-label"><span>*</span> SĐT:</label>
+                                    <input type="tel" maxlength="10" pattern="^\+?[0-9]\d{1,14}$" class="form-control"
+                                        id="input-phone" placeholder="Số điện thoại" required>
+                                    <div class="invalid-tooltip">
+                                        SĐT không hợp lệ
+                                    </div>
+                                </div>
+                                <div class="col-md-6 position-relative">
+                                    <label for="input-family" class="form-label">Thân nhân của:</label>
+                                    <input type="text" class="form-control" id="input-family" placeholder="Tên liệt sĩ">
+                                </div>
+                                <div class="col-md-6 position-relative">
+                                    <label for="input-role" class="form-label">Quan hệ với liện sĩ:</label>
+                                    <select class="form-select" id="input-role">
+                                        <option selected disabled value="">Quan hệ với liệt sĩ</option>
+                                        <option value="1">Con</option>
+                                        <option value="2">Bố</option>
+                                        <option value="3">Mẹ</option>
+                                        <option value="4">Vợ</option>
+                                        <option value="5">Anh</option>
+                                        <option value="6">Em</option>
+                                        <option value="7">Bà nội</option>
+                                        <option value="8">Chồng</option>
+                                        <option value="9">Cô</option>
+                                        <option value="10">Bố nuôi</option>
+                                    </select>
+                                    <div class="invalid-tooltip">
+                                        Please select a valid state.
+                                    </div>
+                                </div>
+                                <div class="col-md-12 position-relative">
+                                    <label for="input-datetime" class="form-label"><span>*</span> Thời gian:</label>
+                                    <input type="text" class="form-control" id="input-datetime"
+                                        placeholder="Thời gian viếng thăm" required>
+                                    <div class="invalid-tooltip">
+                                        Thời gian không được trống
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="input-img" class="form-label">Ảnh giấy giới thiệu:</label>
+                                    <input type="file" id="input-img" multiple accept="image/*" style="display: none;">
+                                    <div id="imagePreviewContainer">
+                                        <div id="addImageBtn"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                height="24" viewBox="0 0 24 24">
+                                                <path fill="none" stroke="#313131" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="1.5"
+                                                    d="M18 12h-6m0 0H6m6 0V6m0 6v6" />
+                                            </svg></div>
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex gap-3 justify-content-end mt-4">
+                                    <div class="button secondary close">
+                                        <div class="icon">
+                                        </div>
+                                        <div class="text">Đóng</div>
+                                    </div>
+                                    <button class="button primary" type="submit">
+                                        <div class="icon">
+                                            <img src="./assets/images/sent.svg" alt="submit">
+                                        </div>
+                                        <div class="text">Gửi</div>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <div class="popup-right">
+                            <img src="./assets/images/banner-2.jpeg" alt="Nghia Trang Long An">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="table-list">
+            <div class="container">
+                <h2 class="section-title">Danh sách liệt sĩ</h2>
+                <div class="filter-container">
+                    <div class="row g-3">
+                        <div class="col-md-3 position-relative">
+                            <input type="text" class="form-control" id="input-name" placeholder="Tên liệt sĩ">
+                        </div>
+                        <div class="col-md-2 position-relative">
+                            <input type="text" class="form-control" id="input-alias" placeholder="Bí danh">
+                        </div>
+                        <div class="col-md-2 position-relative">
+                            <input type="text" class="form-control" id="input-hometown" placeholder="Quê quán">
+                        </div>
+                        <div class="col-md-2 position-relative">
+                            <input type="number" class="form-control" id="input-birthday" placeholder="Năm sinh">
+                        </div>
+                        <div class="col-md-2 position-relative">
+                            <input type="number" class="form-control" id="input-deathday" placeholder="Năm mất">
+                        </div>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Họ tên</th>
+                                    <th scope="col">Bí danh</th>
+                                    <th scope="col">Quê quán</th>
+                                    <th scope="col">Năm sinh</th>
+                                    <th scope="col">Năm mất</th>
+                                    <th scope="col">Người có công</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>1</th>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>A Nguyễn</td>
+                                    <td>Hà Nội</td>
+                                    <td>1920</td>
+                                    <td>1980</td>
+                                    <td>Liệt sĩ</td>
+                                    <td>
+                                        <div class="group-popup-memos">
+                                            <div class="button primary btn-popup-memos">
+                                                <div class="icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" fill-rule="evenodd" d="m16.622 15.172l4.244 4.244l-1.414 1.415l-4.24-4.24a7 7 0 1 1 1.41-1.42zM16 11a5 5 0 1 0-10 0a5 5 0 0 0 10 0"/></svg>
+                                                </div>
+                                            </div>
+                                            <div class="popup-memos">
+                                                <div class="popup-wrapper">
+                                                    <div class="close">
+                                                        <img src="./assets/images/mingcute--close-fill.svg" alt="close popup">
+                                                    </div>
+                                                    <div class="popup-memos-group">
+                                                        <div class="popup-memos-item">
+                                                            <div class="group-img">
+                                                                <img src="./assets/images/star.svg" alt="star">
+                                                                <span>Liệt sĩ</span>
+                                                            </div>
+                                                            <div class="name">Lê Văn Đông</div>
+                                                            <ul>
+                                                                <li><span>Năm Sinh:</span> 1898</li>
+                                                                <li><span>Nguyên quán:</span> Xã Khánh Hậu, Thị xã Tân An, Long An</li>
+                                                                <li><span>Cấp bậc, chức vụ:</span> Du kích</li>
+                                                                <li><span>Đơn vị:</span> Xã Tân Lý Tây</li>
+                                                                <li><span>Hy sinh:</span> 16/12/1946</li>
+                                                                <li><span>Vị trí mộ:</span> Khu B, Lô 1, Hàng 16, Số 321</li>
+                                                            </ul>
+                                                            <div class="seemore-group">
+                                                                <a href="/ban-do.html" class="seemore">
+                                                                    <div class="text">Xem vị trí</div>
+                                                                    <div class="icon">
+                                                                        <img src="./assets/images/arrowright.svg" alt="See more">
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="position-relative">
+                                                            <div class="popup-memos-imgs">
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Bia.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Portrait.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Landscape.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-prev">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M15.3398 18L9.33984 12L15.3398 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="btn-next">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M9.33984 18L15.3398 12L9.33984 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td>Nguyễn Văn B</td>
+                                    <td>A Nguyễn</td>
+                                    <td>Hà Nội</td>
+                                    <td>1920</td>
+                                    <td>1980</td>
+                                    <td>Liệt sĩ</td>
+                                    <td>
+                                        <div class="group-popup-memos">
+                                            <div class="button primary btn-popup-memos">
+                                                <div class="icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" fill-rule="evenodd" d="m16.622 15.172l4.244 4.244l-1.414 1.415l-4.24-4.24a7 7 0 1 1 1.41-1.42zM16 11a5 5 0 1 0-10 0a5 5 0 0 0 10 0"/></svg>
+                                                </div>
+                                            </div>
+                                            <div class="popup-memos">
+                                                <div class="popup-wrapper">
+                                                    <div class="close">
+                                                        <img src="./assets/images/mingcute--close-fill.svg" alt="close popup">
+                                                    </div>
+                                                    <div class="popup-memos-group">
+                                                        <div class="popup-memos-item">
+                                                            <div class="group-img">
+                                                                <img src="./assets/images/star.svg" alt="star">
+                                                                <span>Liệt sĩ</span>
+                                                            </div>
+                                                            <div class="name">Lê Văn Đông</div>
+                                                            <ul>
+                                                                <li><span>Năm Sinh:</span> 1898</li>
+                                                                <li><span>Nguyên quán:</span> Xã Khánh Hậu, Thị xã Tân An, Long An</li>
+                                                                <li><span>Cấp bậc, chức vụ:</span> Du kích</li>
+                                                                <li><span>Đơn vị:</span> Xã Tân Lý Tây</li>
+                                                                <li><span>Hy sinh:</span> 16/12/1946</li>
+                                                                <li><span>Vị trí mộ:</span> Khu B, Lô 1, Hàng 16, Số 321</li>
+                                                            </ul>
+                                                            <div class="seemore-group">
+                                                                <a href="/ban-do.html" class="seemore">
+                                                                    <div class="text">Xem vị trí</div>
+                                                                    <div class="icon">
+                                                                        <img src="./assets/images/arrowright.svg" alt="See more">
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="position-relative">
+                                                            <div class="popup-memos-imgs">
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Bia.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Portrait.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Landscape.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-prev">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M15.3398 18L9.33984 12L15.3398 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="btn-next">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M9.33984 18L15.3398 12L9.33984 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>A Nguyễn</td>
+                                    <td>Hà Nội</td>
+                                    <td>1920</td>
+                                    <td>1980</td>
+                                    <td>Liệt sĩ</td>
+                                    <td>
+                                        <div class="group-popup-memos">
+                                            <div class="button primary btn-popup-memos">
+                                                <div class="icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" fill-rule="evenodd" d="m16.622 15.172l4.244 4.244l-1.414 1.415l-4.24-4.24a7 7 0 1 1 1.41-1.42zM16 11a5 5 0 1 0-10 0a5 5 0 0 0 10 0"/></svg>
+                                                </div>
+                                            </div>
+                                            <div class="popup-memos">
+                                                <div class="popup-wrapper">
+                                                    <div class="close">
+                                                        <img src="./assets/images/mingcute--close-fill.svg" alt="close popup">
+                                                    </div>
+                                                    <div class="popup-memos-group">
+                                                        <div class="popup-memos-item">
+                                                            <div class="group-img">
+                                                                <img src="./assets/images/star.svg" alt="star">
+                                                                <span>Liệt sĩ</span>
+                                                            </div>
+                                                            <div class="name">Lê Văn Đông</div>
+                                                            <ul>
+                                                                <li><span>Năm Sinh:</span> 1898</li>
+                                                                <li><span>Nguyên quán:</span> Xã Khánh Hậu, Thị xã Tân An, Long An</li>
+                                                                <li><span>Cấp bậc, chức vụ:</span> Du kích</li>
+                                                                <li><span>Đơn vị:</span> Xã Tân Lý Tây</li>
+                                                                <li><span>Hy sinh:</span> 16/12/1946</li>
+                                                                <li><span>Vị trí mộ:</span> Khu B, Lô 1, Hàng 16, Số 321</li>
+                                                            </ul>
+                                                            <div class="seemore-group">
+                                                                <a href="/ban-do.html" class="seemore">
+                                                                    <div class="text">Xem vị trí</div>
+                                                                    <div class="icon">
+                                                                        <img src="./assets/images/arrowright.svg" alt="See more">
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="position-relative">
+                                                            <div class="popup-memos-imgs">
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Bia.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Portrait.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Landscape.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-prev">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M15.3398 18L9.33984 12L15.3398 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="btn-next">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M9.33984 18L15.3398 12L9.33984 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>4</th>
+                                    <td>Nguyễn Văn B</td>
+                                    <td>A Nguyễn</td>
+                                    <td>Hà Nội</td>
+                                    <td>1920</td>
+                                    <td>1980</td>
+                                    <td>Liệt sĩ</td>
+                                    <td>
+                                        <div class="group-popup-memos">
+                                            <div class="button primary btn-popup-memos">
+                                                <div class="icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" fill-rule="evenodd" d="m16.622 15.172l4.244 4.244l-1.414 1.415l-4.24-4.24a7 7 0 1 1 1.41-1.42zM16 11a5 5 0 1 0-10 0a5 5 0 0 0 10 0"/></svg>
+                                                </div>
+                                            </div>
+                                            <div class="popup-memos">
+                                                <div class="popup-wrapper">
+                                                    <div class="close">
+                                                        <img src="./assets/images/mingcute--close-fill.svg" alt="close popup">
+                                                    </div>
+                                                    <div class="popup-memos-group">
+                                                        <div class="popup-memos-item">
+                                                            <div class="group-img">
+                                                                <img src="./assets/images/star.svg" alt="star">
+                                                                <span>Liệt sĩ</span>
+                                                            </div>
+                                                            <div class="name">Lê Văn Đông</div>
+                                                            <ul>
+                                                                <li><span>Năm Sinh:</span> 1898</li>
+                                                                <li><span>Nguyên quán:</span> Xã Khánh Hậu, Thị xã Tân An, Long An</li>
+                                                                <li><span>Cấp bậc, chức vụ:</span> Du kích</li>
+                                                                <li><span>Đơn vị:</span> Xã Tân Lý Tây</li>
+                                                                <li><span>Hy sinh:</span> 16/12/1946</li>
+                                                                <li><span>Vị trí mộ:</span> Khu B, Lô 1, Hàng 16, Số 321</li>
+                                                            </ul>
+                                                            <div class="seemore-group">
+                                                                <a href="/ban-do.html" class="seemore">
+                                                                    <div class="text">Xem vị trí</div>
+                                                                    <div class="icon">
+                                                                        <img src="./assets/images/arrowright.svg" alt="See more">
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="position-relative">
+                                                            <div class="popup-memos-imgs">
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Bia.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Portrait.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Landscape.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-prev">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M15.3398 18L9.33984 12L15.3398 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="btn-next">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M9.33984 18L15.3398 12L9.33984 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>5</th>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>A Nguyễn</td>
+                                    <td>Hà Nội</td>
+                                    <td>1920</td>
+                                    <td>1980</td>
+                                    <td>Liệt sĩ</td>
+                                    <td>
+                                        <div class="group-popup-memos">
+                                            <div class="button primary btn-popup-memos">
+                                                <div class="icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" fill-rule="evenodd" d="m16.622 15.172l4.244 4.244l-1.414 1.415l-4.24-4.24a7 7 0 1 1 1.41-1.42zM16 11a5 5 0 1 0-10 0a5 5 0 0 0 10 0"/></svg>
+                                                </div>
+                                            </div>
+                                            <div class="popup-memos">
+                                                <div class="popup-wrapper">
+                                                    <div class="close">
+                                                        <img src="./assets/images/mingcute--close-fill.svg" alt="close popup">
+                                                    </div>
+                                                    <div class="popup-memos-group">
+                                                        <div class="popup-memos-item">
+                                                            <div class="group-img">
+                                                                <img src="./assets/images/star.svg" alt="star">
+                                                                <span>Liệt sĩ</span>
+                                                            </div>
+                                                            <div class="name">Lê Văn Đông</div>
+                                                            <ul>
+                                                                <li><span>Năm Sinh:</span> 1898</li>
+                                                                <li><span>Nguyên quán:</span> Xã Khánh Hậu, Thị xã Tân An, Long An</li>
+                                                                <li><span>Cấp bậc, chức vụ:</span> Du kích</li>
+                                                                <li><span>Đơn vị:</span> Xã Tân Lý Tây</li>
+                                                                <li><span>Hy sinh:</span> 16/12/1946</li>
+                                                                <li><span>Vị trí mộ:</span> Khu B, Lô 1, Hàng 16, Số 321</li>
+                                                            </ul>
+                                                            <div class="seemore-group">
+                                                                <a href="/ban-do.html" class="seemore">
+                                                                    <div class="text">Xem vị trí</div>
+                                                                    <div class="icon">
+                                                                        <img src="./assets/images/arrowright.svg" alt="See more">
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="position-relative">
+                                                            <div class="popup-memos-imgs">
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Bia.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Portrait.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Landscape.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-prev">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M15.3398 18L9.33984 12L15.3398 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="btn-next">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M9.33984 18L15.3398 12L9.33984 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>6</th>
+                                    <td>Nguyễn Văn B</td>
+                                    <td>A Nguyễn</td>
+                                    <td>Hà Nội</td>
+                                    <td>1920</td>
+                                    <td>1980</td>
+                                    <td>Liệt sĩ</td>
+                                    <td>
+                                        <div class="group-popup-memos">
+                                            <div class="button primary btn-popup-memos">
+                                                <div class="icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" fill-rule="evenodd" d="m16.622 15.172l4.244 4.244l-1.414 1.415l-4.24-4.24a7 7 0 1 1 1.41-1.42zM16 11a5 5 0 1 0-10 0a5 5 0 0 0 10 0"/></svg>
+                                                </div>
+                                            </div>
+                                            <div class="popup-memos">
+                                                <div class="popup-wrapper">
+                                                    <div class="close">
+                                                        <img src="./assets/images/mingcute--close-fill.svg" alt="close popup">
+                                                    </div>
+                                                    <div class="popup-memos-group">
+                                                        <div class="popup-memos-item">
+                                                            <div class="group-img">
+                                                                <img src="./assets/images/star.svg" alt="star">
+                                                                <span>Liệt sĩ</span>
+                                                            </div>
+                                                            <div class="name">Lê Văn Đông</div>
+                                                            <ul>
+                                                                <li><span>Năm Sinh:</span> 1898</li>
+                                                                <li><span>Nguyên quán:</span> Xã Khánh Hậu, Thị xã Tân An, Long An</li>
+                                                                <li><span>Cấp bậc, chức vụ:</span> Du kích</li>
+                                                                <li><span>Đơn vị:</span> Xã Tân Lý Tây</li>
+                                                                <li><span>Hy sinh:</span> 16/12/1946</li>
+                                                                <li><span>Vị trí mộ:</span> Khu B, Lô 1, Hàng 16, Số 321</li>
+                                                            </ul>
+                                                            <div class="seemore-group">
+                                                                <a href="/ban-do.html" class="seemore">
+                                                                    <div class="text">Xem vị trí</div>
+                                                                    <div class="icon">
+                                                                        <img src="./assets/images/arrowright.svg" alt="See more">
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="position-relative">
+                                                            <div class="popup-memos-imgs">
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Bia.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Portrait.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Landscape.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-prev">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M15.3398 18L9.33984 12L15.3398 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="btn-next">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M9.33984 18L15.3398 12L9.33984 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>7</th>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>A Nguyễn</td>
+                                    <td>Hà Nội</td>
+                                    <td>1920</td>
+                                    <td>1980</td>
+                                    <td>Liệt sĩ</td>
+                                    <td>
+                                        <div class="group-popup-memos">
+                                            <div class="button primary btn-popup-memos">
+                                                <div class="icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" fill-rule="evenodd" d="m16.622 15.172l4.244 4.244l-1.414 1.415l-4.24-4.24a7 7 0 1 1 1.41-1.42zM16 11a5 5 0 1 0-10 0a5 5 0 0 0 10 0"/></svg>
+                                                </div>
+                                            </div>
+                                            <div class="popup-memos">
+                                                <div class="popup-wrapper">
+                                                    <div class="close">
+                                                        <img src="./assets/images/mingcute--close-fill.svg" alt="close popup">
+                                                    </div>
+                                                    <div class="popup-memos-group">
+                                                        <div class="popup-memos-item">
+                                                            <div class="group-img">
+                                                                <img src="./assets/images/star.svg" alt="star">
+                                                                <span>Liệt sĩ</span>
+                                                            </div>
+                                                            <div class="name">Lê Văn Đông</div>
+                                                            <ul>
+                                                                <li><span>Năm Sinh:</span> 1898</li>
+                                                                <li><span>Nguyên quán:</span> Xã Khánh Hậu, Thị xã Tân An, Long An</li>
+                                                                <li><span>Cấp bậc, chức vụ:</span> Du kích</li>
+                                                                <li><span>Đơn vị:</span> Xã Tân Lý Tây</li>
+                                                                <li><span>Hy sinh:</span> 16/12/1946</li>
+                                                                <li><span>Vị trí mộ:</span> Khu B, Lô 1, Hàng 16, Số 321</li>
+                                                            </ul>
+                                                            <div class="seemore-group">
+                                                                <a href="/ban-do.html" class="seemore">
+                                                                    <div class="text">Xem vị trí</div>
+                                                                    <div class="icon">
+                                                                        <img src="./assets/images/arrowright.svg" alt="See more">
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="position-relative">
+                                                            <div class="popup-memos-imgs">
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Bia.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Portrait.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Landscape.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-prev">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M15.3398 18L9.33984 12L15.3398 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="btn-next">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M9.33984 18L15.3398 12L9.33984 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>8</th>
+                                    <td>Nguyễn Văn B</td>
+                                    <td>A Nguyễn</td>
+                                    <td>Hà Nội</td>
+                                    <td>1920</td>
+                                    <td>1980</td>
+                                    <td>Liệt sĩ</td>
+                                    <td>
+                                        <div class="group-popup-memos">
+                                            <div class="button primary btn-popup-memos">
+                                                <div class="icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" fill-rule="evenodd" d="m16.622 15.172l4.244 4.244l-1.414 1.415l-4.24-4.24a7 7 0 1 1 1.41-1.42zM16 11a5 5 0 1 0-10 0a5 5 0 0 0 10 0"/></svg>
+                                                </div>
+                                            </div>
+                                            <div class="popup-memos">
+                                                <div class="popup-wrapper">
+                                                    <div class="close">
+                                                        <img src="./assets/images/mingcute--close-fill.svg" alt="close popup">
+                                                    </div>
+                                                    <div class="popup-memos-group">
+                                                        <div class="popup-memos-item">
+                                                            <div class="group-img">
+                                                                <img src="./assets/images/star.svg" alt="star">
+                                                                <span>Liệt sĩ</span>
+                                                            </div>
+                                                            <div class="name">Lê Văn Đông</div>
+                                                            <ul>
+                                                                <li><span>Năm Sinh:</span> 1898</li>
+                                                                <li><span>Nguyên quán:</span> Xã Khánh Hậu, Thị xã Tân An, Long An</li>
+                                                                <li><span>Cấp bậc, chức vụ:</span> Du kích</li>
+                                                                <li><span>Đơn vị:</span> Xã Tân Lý Tây</li>
+                                                                <li><span>Hy sinh:</span> 16/12/1946</li>
+                                                                <li><span>Vị trí mộ:</span> Khu B, Lô 1, Hàng 16, Số 321</li>
+                                                            </ul>
+                                                            <div class="seemore-group">
+                                                                <a href="/ban-do.html" class="seemore">
+                                                                    <div class="text">Xem vị trí</div>
+                                                                    <div class="icon">
+                                                                        <img src="./assets/images/arrowright.svg" alt="See more">
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="position-relative">
+                                                            <div class="popup-memos-imgs">
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Bia.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Portrait.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Landscape.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-prev">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M15.3398 18L9.33984 12L15.3398 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="btn-next">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M9.33984 18L15.3398 12L9.33984 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>9</th>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>A Nguyễn</td>
+                                    <td>Hà Nội</td>
+                                    <td>1920</td>
+                                    <td>1980</td>
+                                    <td>Liệt sĩ</td>
+                                    <td>
+                                        <div class="group-popup-memos">
+                                            <div class="button primary btn-popup-memos">
+                                                <div class="icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" fill-rule="evenodd" d="m16.622 15.172l4.244 4.244l-1.414 1.415l-4.24-4.24a7 7 0 1 1 1.41-1.42zM16 11a5 5 0 1 0-10 0a5 5 0 0 0 10 0"/></svg>
+                                                </div>
+                                            </div>
+                                            <div class="popup-memos">
+                                                <div class="popup-wrapper">
+                                                    <div class="close">
+                                                        <img src="./assets/images/mingcute--close-fill.svg" alt="close popup">
+                                                    </div>
+                                                    <div class="popup-memos-group">
+                                                        <div class="popup-memos-item">
+                                                            <div class="group-img">
+                                                                <img src="./assets/images/star.svg" alt="star">
+                                                                <span>Liệt sĩ</span>
+                                                            </div>
+                                                            <div class="name">Lê Văn Đông</div>
+                                                            <ul>
+                                                                <li><span>Năm Sinh:</span> 1898</li>
+                                                                <li><span>Nguyên quán:</span> Xã Khánh Hậu, Thị xã Tân An, Long An</li>
+                                                                <li><span>Cấp bậc, chức vụ:</span> Du kích</li>
+                                                                <li><span>Đơn vị:</span> Xã Tân Lý Tây</li>
+                                                                <li><span>Hy sinh:</span> 16/12/1946</li>
+                                                                <li><span>Vị trí mộ:</span> Khu B, Lô 1, Hàng 16, Số 321</li>
+                                                            </ul>
+                                                            <div class="seemore-group">
+                                                                <a href="/ban-do.html" class="seemore">
+                                                                    <div class="text">Xem vị trí</div>
+                                                                    <div class="icon">
+                                                                        <img src="./assets/images/arrowright.svg" alt="See more">
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="position-relative">
+                                                            <div class="popup-memos-imgs">
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Bia.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Portrait.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Landscape.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-prev">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M15.3398 18L9.33984 12L15.3398 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="btn-next">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M9.33984 18L15.3398 12L9.33984 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>10</th>
+                                    <td>Nguyễn Văn B</td>
+                                    <td>A Nguyễn</td>
+                                    <td>Hà Nội</td>
+                                    <td>1920</td>
+                                    <td>1980</td>
+                                    <td>Liệt sĩ</td>
+                                    <td>
+                                        <div class="group-popup-memos">
+                                            <div class="button primary btn-popup-memos">
+                                                <div class="icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" fill-rule="evenodd" d="m16.622 15.172l4.244 4.244l-1.414 1.415l-4.24-4.24a7 7 0 1 1 1.41-1.42zM16 11a5 5 0 1 0-10 0a5 5 0 0 0 10 0"/></svg>
+                                                </div>
+                                            </div>
+                                            <div class="popup-memos">
+                                                <div class="popup-wrapper">
+                                                    <div class="close">
+                                                        <img src="./assets/images/mingcute--close-fill.svg" alt="close popup">
+                                                    </div>
+                                                    <div class="popup-memos-group">
+                                                        <div class="popup-memos-item">
+                                                            <div class="group-img">
+                                                                <img src="./assets/images/star.svg" alt="star">
+                                                                <span>Liệt sĩ</span>
+                                                            </div>
+                                                            <div class="name">Lê Văn Đông</div>
+                                                            <ul>
+                                                                <li><span>Năm Sinh:</span> 1898</li>
+                                                                <li><span>Nguyên quán:</span> Xã Khánh Hậu, Thị xã Tân An, Long An</li>
+                                                                <li><span>Cấp bậc, chức vụ:</span> Du kích</li>
+                                                                <li><span>Đơn vị:</span> Xã Tân Lý Tây</li>
+                                                                <li><span>Hy sinh:</span> 16/12/1946</li>
+                                                                <li><span>Vị trí mộ:</span> Khu B, Lô 1, Hàng 16, Số 321</li>
+                                                            </ul>
+                                                            <div class="seemore-group">
+                                                                <a href="/ban-do.html" class="seemore">
+                                                                    <div class="text">Xem vị trí</div>
+                                                                    <div class="icon">
+                                                                        <img src="./assets/images/arrowright.svg" alt="See more">
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="position-relative">
+                                                            <div class="popup-memos-imgs">
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Bia.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Portrait.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="./assets/images/674757Landscape.jpg" alt="Lê Văn Đông">
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-prev">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M15.3398 18L9.33984 12L15.3398 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="btn-next">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                                                    <path d="M9.33984 18L15.3398 12L9.33984 6" stroke="#bd8986" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="group-pagination">
+                    <div class="wrap">
+                        <div class="total">Tổng 54</div>
+                        <select name="perpage" class="select-custom">
+                            <option value="10" selected>10/trang</option>
+                            <option value="10">20/trang</option>
+                            <option value="10">50/trang</option>
+                            <option value="10">100/trang</option>
+                            <option value="10">500/trang</option>
+                        </select>
+                    </div>
+                    <div class="pagination-custom" data-page="10"></div>
+                </div>
+            </div>
+        </section>
+        <section class="news">
+            <div class="container">
+                <h2 class="section-title">Tin tức - Sự kiện</h2>
+                <div class="news-list">
+                    <div class="news-item">
+                        <div class="card">
+                            <div class="card-wrap">
+                                <div class="card-img">
+                                    <img class="card-img-top lazyloaded" src="./assets/images/news-1.jpg" alt="News">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-top">
+                                        <h3 class="title">Tin tức</h3>
+                                        <span class="date">07/08/2024 14:03</span>
+                                    </div>
+                                    <a href="/tin-tuc-chi-tiet.html">
+                                        <h3 class="card-title">Kỷ niệm 77 năm Ngày Thương binh - Liệt sỹ</h3>
+                                    </a>
+                                    <a href="/tin-tuc-chi-tiet.html" class="button primary d-flex d-lg-none">
+                                        <div class="icon"></div>
+                                        <div class="text">Đọc thêm</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="/tin-tuc-chi-tiet.html" class="button primary d-none d-lg-flex">
+                                <div class="icon"></div>
+                                <div class="text">Đọc thêm</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="card">
+                            <div class="card-wrap">
+                                <div class="card-img">
+                                    <img class="card-img-top lazyloaded" src="./assets/images/news-2.jpg" alt="News">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-top">
+                                        <h3 class="title">Sự kiện</h3>
+                                        <span class="date">07/08/2024 14:03</span>
+                                    </div>
+                                    <a href="/tin-tuc-chi-tiet.html">
+                                        <h3 class="card-title">Đoàn viên, thanh niên ra quân dọn vệ sinh tại Nghĩa trang
+                                            liệt sĩ tỉnh Long An</h3>
+                                    </a>
+                                    <a href="/tin-tuc-chi-tiet.html" class="button primary d-flex d-lg-none">
+                                        <div class="icon"></div>
+                                        <div class="text">Đọc thêm</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="/tin-tuc-chi-tiet.html" class="button primary d-none d-lg-flex">
+                                <div class="icon"></div>
+                                <div class="text">Đọc thêm</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="card">
+                            <div class="card-wrap">
+                                <div class="card-img">
+                                    <img class="card-img-top lazyloaded" src="./assets/images/news-3.jpg" alt="News">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-top">
+                                        <h3 class="title">Tin tức</h3>
+                                        <span class="date">07/08/2024 14:03</span>
+                                    </div>
+                                    <a href="/tin-tuc-chi-tiet.html">
+                                        <h3 class="card-title">Những cuộc hội ngộ xúc động tại Nghĩa trang liệt sĩ tỉnh
+                                            Long An</h3>
+                                    </a>
+                                    <a href="/tin-tuc-chi-tiet.html" class="button primary d-flex d-lg-none">
+                                        <div class="icon"></div>
+                                        <div class="text">Đọc thêm</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="/tin-tuc-chi-tiet.html" class="button primary d-none d-lg-flex">
+                                <div class="icon"></div>
+                                <div class="text">Đọc thêm</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="seemore-group">
+                    <a href="/tin-tuc.html" class="seemore">
+                        <div class="text">Xem thêm</div>
+                        <div class="icon">
+                            <img src="./assets/images/arrowright.svg" alt="See more">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <img class="bg" src="./assets/images/banner-footer.png" alt="banner">
+        <div class="container">
+            <div class="footer-list">
+                <div class="footer-infor">
+                    <h3 class="title">
+                        SỞ LAO ĐỘNG, THƯƠNG BINH VÀ XÃ HỘI LONG AN
+                    </h3>
+                    <ul>
+                        <li>
+                            Địa chỉ: 76 Nguyễn Huệ, Phường 1, Tân An, Long An
+                        </li>
+                        <li>
+                            Điện thoại: 0272 3826 214
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-by">
+                    <div class="content">
+                        <span>
+                            Phát triển bởi
+                        </span>
+                        <div class="group">
+                            <img src="./assets/images/logo-vnpt.png" alt="vnpt">
+                            <span>VNPT LONG AN</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<!-- library -->
+<script src="./assets/library/jquery/jquery.min.js"></script>
+<script src="./assets/library/slick/slick/slick.min.js"></script>
+<script src="./assets/library/validate/jquery.validate.js"></script>
+<script src="./assets/library/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="./assets/library/flatpickr-master/flatpickr.js"></script>
+
+<!-- js -->
+<script src="./assets/js/main.js"></script>
+<script src="./assets/js/home.js"></script>
+
+</html>

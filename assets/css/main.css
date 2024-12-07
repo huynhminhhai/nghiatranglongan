@@ -214,18 +214,18 @@ input[type="number"] {
     margin-bottom: 30px;
 }
 
-.popup .form-label {
+.form-label {
     font-weight: 500;
     color: var(--black-color);
     margin-bottom: 5px;
 }
 
-.popup .form-label span {
+.form-label span {
     color: red;
 }
 
-.popup .form-control,
-.popup select {
+.form-control,
+select {
     line-height: 1;
     height: 48px;
     color: #797979;

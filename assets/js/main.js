@@ -209,6 +209,24 @@ $(document).ready(function () {
             nextArrow: $nextArrow,
         });
     });
+
+    $('.group-popup-memos').each(function () {
+        const $this = $(this); // Container hiện tại
+        const $slider = $this.find('.popup-memos-imgs'); // Slider trong container này
+        const $prevArrow = $this.find('.btn-prev'); // Nút prev của slider này
+        const $nextArrow = $this.find('.btn-next'); // Nút next của slider này
+
+        // Khởi tạo slick slider
+        $slider.slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+            prevArrow: $prevArrow,
+            nextArrow: $nextArrow,
+        });
+    });
     
     $('.memos-item').click(function() {
         $(this).find('.popup-memos').addClass('active')
@@ -220,5 +238,12 @@ $(document).ready(function () {
         $('.popup-memos').removeClass('active')
         $('.popup-blur').removeClass('active')
     });
+
+    $('.btn-popup-memos').click(function() {
+        let tdElement = $(this).parent()
+
+        $(tdElement).find('.popup-memos').addClass('active')
+        $('.popup-blur').addClass('active')
+    })
 
 });

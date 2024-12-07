@@ -1,3 +1,7 @@
+.news {
+    padding-top: 0;
+}
+
 .news-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -153,7 +157,8 @@
 */
 
 .about .section-title,
-.map .section-title {
+.map .section-title,
+.table-list .section-title {
     margin-bottom: 40px;
 }
 
@@ -163,8 +168,8 @@
 }
 
 .about .content {
-    font-size: var(--fs-p);
-    line-height: var(--lh-p);
+    font-size: var(--fs-h-4);
+    line-height: var(--lh-h-3);
 }
 
 /*
@@ -193,7 +198,8 @@
     border: 1px solid #E4E5E8;
 }
 
-.memos .memos-item .group-img {
+.memos .memos-item .group-img,
+.table-list .group-img {
     color: #b78400;
     font-size: var(--fs-h-4);
     line-height: 1;
@@ -206,7 +212,8 @@
     gap: 8px;
 }
 
-.memos .memos-item .group-img img {
+.memos .memos-item .group-img img,
+.table-list .table .group-img img {
     width: 60px;
     height: auto;
 }
@@ -245,11 +252,11 @@
     visibility: visible;
 }
 
-.memos .memos-item .popup-memos .group-img img {
+.popup-memos .group-img img {
     width: 100px;
 }
 
-.memos .memos-item .popup-memos .name {
+.popup-memos .name {
     font-size: 32px;
     line-height: 42px;
     text-transform: uppercase;
@@ -258,19 +265,20 @@
     color: #b78400;
 }
 
-.memos .memos-item .popup-memos .popup-memos-item ul {
+.popup-memos .popup-memos-item ul {
     display: flex;
     flex-direction: column;
     gap: 6px;
     margin-top: 20px;
+    text-align: start;
 }
 
-.memos .memos-item .popup-memos .popup-memos-item ul li {
+.popup-memos .popup-memos-item ul li {
     font-size: 18px;
     line-height: 20px;
 }
 
-.memos .memos-item .popup-memos .popup-memos-item ul li span {
+.popup-memos .popup-memos-item ul li span {
     font-weight: 600;
 }
 
@@ -319,7 +327,7 @@
 .popup-memos-imgs .slick-list.draggable,
 .popup-memos-imgs .slick-slide,
 .popup-memos-imgs .slick-track,
-.popup-memos-imgs .slick-slide > div {
+.popup-memos-imgs .slick-slide>div {
     height: 100%;
 }
 
@@ -357,8 +365,79 @@
     top: 20px;
     right: 20px;
     z-index: 99;
+    cursor: pointer;
 }
 
 .popup-memos .seemore-group {
     margin-top: 20px;
+}
+
+/*
+* table list
+*/
+
+.table-responsive {
+    height: 500px;
+    padding-right: 8px;
+}
+
+.table-responsive::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.table-responsive::-webkit-scrollbar-track {
+    background: var(--white-color);
+}
+
+/* Handle */
+.table-responsive::-webkit-scrollbar-thumb {
+    background: var(--button-color);
+}
+
+.table-list .table {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.table-list .table th,
+.table-list .table td {
+    padding: 12px;
+}
+
+.table-list .table td {
+    font-weight: 400;
+}
+
+.table-list .table td:last-child {
+    padding: 6px;
+    text-align: center;
+}
+
+.table-list .table thead th {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+}
+
+.table-list .table {
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    overflow: hidden;
+}
+
+.table-list .button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: auto;
+}
+
+
+.table-list .button svg {
+    width: 20px;
+    height: auto;
+}
+
+.filter-container {
+    margin: 40px 0;
 }
