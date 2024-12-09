@@ -191,6 +191,15 @@ input[type="number"] {
     visibility: visible;
 }
 
+.popup .button-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 6px;
+    cursor: pointer;
+}
+
 .popup .popup-left {
     padding: 40px 20px 40px 60px;
 }
@@ -254,6 +263,8 @@ select {
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 10px;
+    max-height: 180px;
+    overflow: auto;
 }
 
 .image-preview,
@@ -570,6 +581,14 @@ select option:first-child {
         --fs-h-5: 16px;
         --lh-h-5: 20px;
     }
+
+    /**
+    * POPUP
+    */
+
+    .popup {
+        max-width: 90%;
+    }
 }
 
 @media screen and (max-width: 991px) {
@@ -592,6 +611,10 @@ select option:first-child {
 
     .pagination {
         padding-top: 60px;
+    }
+
+    #imagePreviewContainer {
+        max-height: 240px;
     }
 }
 
@@ -658,6 +681,35 @@ select option:first-child {
     .pagination-container .pagi-btn, .pagination-container .pagi-page {
         width: 36px;
         height: 36px;
+    }
+
+    /**
+    * POPUP
+    */
+
+    .popup .title {
+        font-size: 24px;
+    }
+    
+    .popup .popup-left {
+        padding: 24px;
+    }
+
+    .popup .popup-left .button {
+        width: 100%;
+    }
+    
+    .form-control, select {
+        height: 42px;
+    }
+
+    #imagePreviewContainer {
+        max-height: 140px;
+    }
+
+    .image-preview, #addImageBtn {
+        width: 100px;
+        height: 100px;
     }
 
 }
