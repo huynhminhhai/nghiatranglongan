@@ -581,7 +581,7 @@ select option:first-child {
     padding: 12px;
     border-radius: 8px;
     cursor: pointer;
-    z-index: 99;
+    z-index: 3;
     transition: all 0.3s linear;
 }
 
