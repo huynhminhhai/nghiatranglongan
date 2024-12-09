@@ -212,6 +212,7 @@
     border: 1px solid #E4E5E8;
     padding: 24px 32px;
     cursor: pointer;
+    position: relative;
     transition: all 0.3s linear;
 }
 
@@ -250,6 +251,34 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+}
+
+.memos .memos-seemore {
+    background: #b78400;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16%;
+    height: 50%;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    padding: 6px;
+    border-top-right-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s linear;
+}
+
+.memos .memos-item:hover .memos-seemore {
+    opacity: 1;
+    visibility: visible;
+}
+
+.memos .memos-seemore img {
+    width: 32px;
+    height: auto;
 }
 
 .popup-memos {
@@ -325,6 +354,7 @@
 .popup-memos-imgs .photo {
     width: 100%;
     height: 100%;
+    max-height: 390px;
     position: relative;
 }
 
@@ -597,6 +627,14 @@
         display: none;
     }
 
+    /**
+    * MEMOS
+    */
+
+    .memos .memos-seemore {
+        padding-right: 12px;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -663,6 +701,10 @@
 
     .memos .memos-item {
         padding-right: 12px;
+    }
+
+    .memos .memos-seemore {
+        padding-right: 2px;
     }
 
     
