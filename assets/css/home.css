@@ -657,5 +657,13 @@
         font-size: 24px;
     }
 
+    /**
+    * MEMOS
+    */
+
+    .memos .memos-item {
+        padding-right: 12px;
+    }
+
     
 }

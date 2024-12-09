@@ -568,6 +568,27 @@ select option:first-child {
     display: none;
 }
 
+/**
+* SCROLL TO TOP
+*/
+
+.scroll-to-top {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 40px;
+    background-color: rgba(189, 137, 134, 0.6);
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 99;
+    transition: all 0.3s linear;
+}
+
+.scroll-to-top:hover {
+    background-color: var(--button-color);
+}
+
 @media screen and (max-width: 1200px) {
     :root {
         --fs-h-1: 36px;
@@ -710,6 +731,10 @@ select option:first-child {
     .image-preview, #addImageBtn {
         width: 100px;
         height: 100px;
+    }
+
+    .scroll-to-top {
+        right: 12px;
     }
 
 }

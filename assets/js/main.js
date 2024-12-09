@@ -266,4 +266,22 @@ $(document).ready(function () {
         $('.filter-container .filter-wrap').slideToggle()
     })
 
+    // SCROLL TO TOP
+
+    const $scrollToTop = $('.scroll-to-top');
+
+    // Hiện hoặc ẩn nút khi cuộn trang
+    $(window).on('scroll', function () {
+        if ($(this).scrollTop() > 200) { // Hiện nút khi cuộn quá 200px
+            $scrollToTop.fadeIn();
+        } else {
+            $scrollToTop.fadeOut();
+        }
+    });
+
+    // Xử lý sự kiện click để cuộn lên đầu trang
+    $scrollToTop.on('click', function () {
+        $('html, body').animate({ scrollTop: 0 }, 500); // Cuộn mượt lên top trong 500ms
+    });
+
 });
