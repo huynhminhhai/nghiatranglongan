@@ -451,6 +451,15 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 36px 24px;
     }
+
+    /**
+    * ABOUT
+    */
+
+    .about .content {
+        font-size: 16px;
+        line-height: 24px;
+    }
 }
 
 @media screen and (max-width: 991px) {
@@ -504,10 +513,22 @@
     .list-news {
         padding-top: 60px;
     }
+
+    .news-detail .content {
+        padding: 60px 0px 60px;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
-    
+
+    /**
+    * ABOUT
+    */
+
+    .about .section-title, .map .section-title, .table-list .section-title {
+        margin-bottom: 24px;
+    }
     
 }
 
@@ -536,6 +557,7 @@
     .news-list {
         grid-template-columns: repeat(1, 1fr);
         gap: 40px 30px;
+        margin-top: 24px;
     }
 
     .news-item .card-body {
@@ -549,6 +571,10 @@
 
     .news-item .button {
         margin-top: 12px;
+    }
+
+    .news-detail .title {
+        font-size: 24px;
     }
 
     

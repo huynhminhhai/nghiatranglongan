@@ -586,7 +586,13 @@ select option:first-child {
         --lh-h-5: 20px;
     }
 
-    
+    .search-group .form-search {
+        width: 50vw;
+    }
+
+    .pagination {
+        padding-top: 60px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -603,6 +609,10 @@ select option:first-child {
         --lh-h-5: 20px;
     }
 
+
+    .search-group .form-search {
+        width: 100vw;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -643,6 +653,11 @@ select option:first-child {
 
     .seemore-group {
         margin-top: 40px;
+    }
+
+    .pagination-container .pagi-btn, .pagination-container .pagi-page {
+        width: 36px;
+        height: 36px;
     }
 
 }
