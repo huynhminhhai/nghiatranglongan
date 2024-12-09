@@ -80,3 +80,21 @@
     width: 20px;
     height: auto;
 }
+
+@media screen and (max-width: 991px) {
+    .footer .footer-list {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .footer .footer-infor ul {
+        align-items: center;
+    }
+
+    .footer .footer-infor .title {
+        text-align: center;
+        line-height: 1.4;
+    }
+}

@@ -552,3 +552,101 @@ select option:first-child {
     font-size: var(--fs-h-4);
     font-weight: 500;
 }
+
+.dropend .dropdown-toggle::after {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    :root {
+        --fs-h-1: 36px;
+        --lh-h-1: 46px;
+        --fs-h-2: 32px;
+        --lh-h-2: 40px;
+        --fs-h-3: 24px;
+        --lh-h-3: 30px;
+        --fs-h-4: 18px;
+        --lh-h-4: 20px;
+        --fs-h-5: 16px;
+        --lh-h-5: 20px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    :root {
+        --fs-h-1: 28px;
+        --lh-h-1: 32px;
+        --fs-h-2: 32px;
+        --lh-h-2: 40px;
+        --fs-h-3: 24px;
+        --lh-h-3: 30px;
+        --fs-h-4: 18px;
+        --lh-h-4: 20px;
+        --fs-h-5: 16px;
+        --lh-h-5: 20px;
+    }
+
+    
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --fs-h-1: 24px;
+        --lh-h-1: 32px;
+        --fs-h-2: 32px;
+        --lh-h-2: 40px;
+        --fs-h-3: 24px;
+        --lh-h-3: 30px;
+        --fs-h-4: 18px;
+        --lh-h-4: 20px;
+        --fs-h-5: 16px;
+        --lh-h-5: 20px;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    :root {
+        --fs-h-1: 14px;
+        --lh-h-1: 20px;
+        --fs-h-2: 32px;
+        --lh-h-2: 40px;
+        --fs-h-3: 24px;
+        --lh-h-3: 30px;
+        --fs-h-4: 18px;
+        --lh-h-4: 20px;
+        --fs-h-5: 16px;
+        --lh-h-5: 20px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .group-pagination {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .button {
+        padding: 0 12px;
+        height: 36px;
+    }
+
+    .button .text {
+        font-size: 14px;
+    }
+
+    .seemore-group {
+        margin-top: 40px;
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+    
+}
