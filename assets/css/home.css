@@ -185,6 +185,24 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     margin-top: 40px;
+    max-height: 500px;
+    overflow: auto;
+    padding-right: 20px;
+}
+
+.memos .memos-list::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+/* Track */
+.memos .memos-list::-webkit-scrollbar-track {
+    background: #e1e1e1;
+}
+
+/* Handle */
+.memos .memos-list::-webkit-scrollbar-thumb {
+    background: var(--button-color);
 }
 
 .memos .memos-item {
@@ -348,6 +366,7 @@
     position: absolute;
     bottom: 10px;
     left: 20px;
+    cursor: pointer;
 }
 
 .popup-memos .btn-next {
@@ -386,7 +405,8 @@
 }
 
 .table-responsive::-webkit-scrollbar {
-    width: 10px;
+    width: 6px;
+    height: 6px;
 }
 
 /* Track */
@@ -423,14 +443,22 @@
     color: var(--white-color);
 }
 
-.table-list .table {
+.table-list .table thead th:first-child {
+    width: 20px;
+}
+
+.table-list .table th:first-child {
+    text-align: center;
+}
+
+/* .table-list .table {
     border-top-left-radius: 14px;
     border-top-right-radius: 14px;
     overflow: hidden;
-}
+} */
 
 .table-list .button {
-    width: 30px;
+    width: 40px;
     height: 30px;
     padding: 0;
     margin: auto;
@@ -444,6 +472,23 @@
 
 .filter-container {
     margin: 40px 0;
+}
+
+.filter-container .filter-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--button-color);
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: none;
+    margin-bottom: 12px;
+}
+
+.filter-container .filter-toggle .text {
+    color: var(--white-color);
+    font-weight: 500;
 }
 
 @media screen and (max-width: 1200px) {
@@ -470,10 +515,12 @@
 
     .memos .memos-list {
         grid-template-columns: repeat(1, 1fr);
+        max-height: 640px;
     }
 
     .group-filter {
         margin-top: 20px;
+        justify-content: center;
     }
 
     .popup-memos-item, .popup-memos-imgs {
@@ -518,6 +565,38 @@
         padding: 60px 0px 60px;
     }
 
+    /**
+    * TABLE LIST
+    */
+
+    .table-list .table thead th,
+    .table-list .table td {
+        white-space: nowrap;
+    }
+
+    .table-list .table thead th:nth-child(4) {
+        white-space: inherit;
+        min-width: 200px;
+        max-width: 200px;
+    }
+
+    .filter-container input,
+    .filter-container select {
+        height: 42px;
+    }
+
+    .filter-container {
+        margin: 40px 0 20px;
+    }
+
+    .filter-container .filter-toggle {
+        display: flex;
+    }
+
+    .filter-container .filter-wrap {
+        display: none;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -539,6 +618,7 @@
 
     .memos .memos-list {
         margin-top: 24px;
+        padding-right: 12px;
     }
 
     .popup-memos .name {

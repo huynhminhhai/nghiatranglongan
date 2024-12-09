@@ -86,7 +86,7 @@
 .header .navbar .authen-list {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 12px;
 }
 
 .header .header-nav {

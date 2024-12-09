@@ -192,6 +192,20 @@ $(document).ready(function () {
     // Gán giá trị cho select
     $('#filter-month').val(currentMonth);
 
+    // Cập nhật text number theo giá trị đã chọn
+    const updateMonthText = () => {
+        const selectedMonth = $('#filter-month').val(); // Lấy giá trị được chọn
+        $('#month-value').text(selectedMonth); // Cập nhật text
+    };
+
+    // Cập nhật giá trị ngay khi trang load
+    updateMonthText();
+
+    // Lắng nghe sự kiện thay đổi giá trị của select
+    $('#filter-month').on('change', function () {
+        updateMonthText();
+    });
+
     $('.memos-item').each(function () {
         const $this = $(this); // Container hiện tại
         const $slider = $this.find('.popup-memos-imgs'); // Slider trong container này
@@ -244,6 +258,12 @@ $(document).ready(function () {
 
         $(tdElement).find('.popup-memos').addClass('active')
         $('.popup-blur').addClass('active')
+    })
+
+    // TABLE LIST
+
+    $('.filter-container .filter-toggle').click(function() {
+        $('.filter-container .filter-wrap').slideToggle()
     })
 
 });
