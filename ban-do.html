@@ -99,31 +99,25 @@
                     <div class="col-12 col-lg-7">
                         <div class="popup-left">
                             <div class="title">Đăng Ký Viếng Thăm</div>
-                            <form class="row g-3 needs-validation" novalidate id="form-register">
+                            <form class="row gx-3 gy-4" id="form-register">
                                 <div class="col-lg-6 position-relative">
                                     <label for="input-visitor" class="form-label"><span>*</span> Tên/nhóm người viếng
                                         thăm:</label>
-                                    <input type="text" class="form-control" id="input-visitor"
+                                    <input type="text" class="form-control" id="input-visitor" name="visitorName"
                                         placeholder="Tên/nhóm người viếng thăm" required>
-                                    <div class="invalid-tooltip">
-                                        Họ tên không được trống
-                                    </div>
                                 </div>
                                 <div class="col-lg-6 position-relative">
                                     <label for="input-phone" class="form-label"><span>*</span> SĐT:</label>
-                                    <input type="tel" maxlength="10" pattern="^\+?[0-9]\d{1,14}$" class="form-control"
+                                    <input type="tel" maxlength="10" class="form-control" name="phoneNumber"
                                         id="input-phone" placeholder="Số điện thoại" required>
-                                    <div class="invalid-tooltip">
-                                        SĐT không hợp lệ
-                                    </div>
                                 </div>
                                 <div class="col-lg-6 position-relative">
                                     <label for="input-family" class="form-label">Thân nhân của:</label>
-                                    <input type="text" class="form-control" id="input-family" placeholder="Tên liệt sĩ">
+                                    <input type="text" class="form-control" id="input-family" name="familyName" placeholder="Tên liệt sĩ">
                                 </div>
                                 <div class="col-lg-6 position-relative">
                                     <label for="input-role" class="form-label">Quan hệ với liện sĩ:</label>
-                                    <select class="form-select" id="input-role">
+                                    <select class="form-select" id="input-role" name="roleName">
                                         <option selected disabled value="">Quan hệ với liệt sĩ</option>
                                         <option value="1">Con</option>
                                         <option value="2">Bố</option>
@@ -142,7 +136,7 @@
                                 </div>
                                 <div class="col-md-12 position-relative">
                                     <label for="input-datetime" class="form-label"><span>*</span> Thời gian:</label>
-                                    <input type="text" class="form-control" id="input-datetime"
+                                    <input type="text" class="form-control" id="input-datetime" name="datetimeRegister"
                                         placeholder="Thời gian viếng thăm" required>
                                     <div class="invalid-tooltip">
                                         Thời gian không được trống
@@ -150,7 +144,7 @@
                                 </div>
                                 <div class="col-12">
                                     <label for="input-img" class="form-label">Ảnh giấy giới thiệu:</label>
-                                    <input type="file" id="input-img" multiple accept="image/*" style="display: none;">
+                                    <input type="file" id="input-img" multiple accept="image/*" name="imgUploads" style="display: none;">
                                     <div id="imagePreviewContainer">
                                         <div id="addImageBtn"><svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                 height="24" viewBox="0 0 24 24">

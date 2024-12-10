@@ -223,6 +223,14 @@ input[type="number"] {
     margin-bottom: 30px;
 }
 
+.popup label.error {
+    position: absolute;
+    top: 100%;
+    left: 8px;
+    color: red;
+    font-size: 14px;
+}
+
 .form-label {
     font-weight: 500;
     color: var(--black-color);
@@ -237,6 +245,10 @@ input[type="number"] {
 select {
     line-height: 1;
     height: 48px;
+    color: #797979;
+}
+
+.form-select {
     color: #797979;
 }
 

@@ -284,4 +284,49 @@ $(document).ready(function () {
         $('html, body').animate({ scrollTop: 0 }, 500); // Cuộn mượt lên top trong 500ms
     });
 
+    // FORM
+
+    jQuery.validator.addMethod(
+        "phoneNumber",
+        function (value, element) {
+            if (/(03|05|07|08|09|01[2|6|8|9])+([0-9]{8})\b/.test(value)) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        "Vui lòng nhập số điện thoại hợp lệ."
+    );
+
+    $("#form-register").validate({
+        rules: {
+            visitorName: {
+                required: true,
+            },
+            phoneNumber: {
+                required: true,
+                phoneNumber: true,
+            },
+            datetimeRegister: {
+                required: true,
+            }
+        },
+        messages: {
+            visitorName: {
+                required: "Họ tên không được trống", 
+            },
+            phoneNumber: {
+                required: "SĐT không được trống",
+            },
+            datetimeRegister: {
+                required: "Thời gian không được trống",
+            }
+        },
+        submitHandler: function (form, e) {
+            e.preventDefault();
+            console.log("Form hợp lệ! Đã gửi.");
+            // Xử lý logic khi form hợp lệ
+        },
+    });
+
 });
