@@ -22,6 +22,7 @@
 .news-item .card-img {
     height: 236px;
     width: 100%;
+    border-radius: 8px;
     overflow: hidden;
 }
 
@@ -174,6 +175,16 @@
 .about .content {
     font-size: var(--fs-h-4);
     line-height: var(--lh-h-3);
+}
+
+.about .section-title {
+    text-align: start;
+    margin-bottom: 20px;
+}
+
+.about .banner {
+    border-radius: 24px;
+    overflow: hidden;
 }
 
 /*
@@ -424,6 +435,53 @@
     margin-top: 20px;
 }
 
+.popup-success {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 48px 24px;
+    width: 40vw;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s linear;
+}
+
+.popup-success.active {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s linear;
+}
+
+.popup-success .button-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.popup-success .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.popup-success .content .title {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--blue-color);
+}
+
+.popup-success .icon img {
+    width: 200px;
+    height: auto;
+}
+
 /*
 * table list
 */
@@ -526,6 +584,10 @@
         gap: 36px 24px;
     }
 
+    .popup-success {
+        width: 65vw;
+    }
+
     /**
     * ABOUT
     */
@@ -576,6 +638,10 @@
 
     .popup-memos {
         padding-bottom: 36px;
+    }
+
+    .popup-success {
+        width: 65vw;
     }
 
     /**
@@ -674,6 +740,18 @@
 
     .popup-memos .seemore-group {
         margin-top: 12px;
+    }
+
+    .popup-success {
+        width: 90vw;
+    }
+
+    .popup-success .content .title {
+        font-size: 18px;
+    }
+
+    .popup-success .icon img {
+        width: 150px;
     }
 
     /*

@@ -3,6 +3,7 @@ $(document).ready(function () {
     flatpickr("#input-datetime", {
         enableTime: true,
         dateFormat: "d-m-Y H:i",
+        minDate: "today"
     });
 
     $("#input-datetime").removeAttr('readonly')
@@ -82,10 +83,16 @@ $(document).ready(function () {
         $('.popup-blur').removeClass('active')
     });
 
+    $('.popup-success .close').click(function () {
+        $('.popup-success').removeClass('active')
+        $('.popup-blur').removeClass('active')
+    });
+
     $('.popup-blur').click(function () {
         $('.popup.register').removeClass('active')
         $('.popup-memos').removeClass('active')
         $('.popup-blur').removeClass('active')
+        $('.popup-success').removeClass('active')
     });
 
     // PAGINATION
@@ -326,6 +333,13 @@ $(document).ready(function () {
             e.preventDefault();
             console.log("Form hợp lệ! Đã gửi.");
             // Xử lý logic khi form hợp lệ
+
+            $('.popup.register').removeClass('active')
+            $('.popup-success').addClass('active')
+
+            $("input").val("");
+            $("select").prop("selectedIndex", 0);
+            $('#imagePreviewContainer .image-wrapper').remove()
         },
     });
 
