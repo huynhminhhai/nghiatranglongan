@@ -494,7 +494,16 @@ select option:first-child {
 */
 
 #map {
-    height: 600px;
+    height: 700px;
+}
+
+.leaflet-control-attribution a,
+.leaflet-control-attribution span {
+    display: none;
+}
+
+.leaflet-container .leaflet-marker-pane img {
+    object-fit: contain;
 }
 
 /*
