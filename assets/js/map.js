@@ -25,28 +25,66 @@ $(document).ready(function () {
         ]
     };
 
-    // Tạo bản đồ
+    // // Tạo bản đồ
+    // const map = L.map('map').setView([data.center_lat, data.center_lng], data.zoom);
+
+    // // Lớp bản đồ đường xá
+    // const streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //     attribution: ''
+    // });
+
+    // // Lớp bản đồ vệ tinh (sử dụng Esri)
+    // const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    //     attribution: '',
+    // });
+
+    // // Thêm lớp bản đồ mặc định
+    // satellite.addTo(map);
+
+    // // Thêm Layer Control
+    // L.control.layers({
+    //     "Giao thông": streets,
+    //     "Vệ tinh": satellite
+    // }).addTo(map);
+
+
+    // // Thêm tile layer
+    // L.tileLayer('', {
+    //     attribution: '© VNPT Long An'
+    // }).addTo(map);
+
+
+
+    // // Thêm marker cho từng khu vực
+    // data.listKhu.forEach(khu => {
+    //     const icon = L.divIcon({
+    //         className: 'text-label',
+    //         html: `<div style="color: white; font-size: 14px; font-weight: bold;">${khu.name}</div>`
+    //     });
+
+    //     L.marker([khu.lat, khu.lng], { icon: icon }).addTo(map);
+    // });
+
+    // Tạo bản đồ Leaflet
+    
+
+    // Khởi tạo bản đồ Leaflet
     const map = L.map('map').setView([data.center_lat, data.center_lng], data.zoom);
 
-    // Lớp bản đồ đường xá
-    const streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-    });
-
-    // Lớp bản đồ vệ tinh (sử dụng Esri)
-    const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-        attribution: 'Tiles © Esri & the GIS User Community'
-    });
-
-    // Thêm lớp bản đồ mặc định
-    satellite.addTo(map);
-
-    // Thêm Layer Control
-    L.control.layers({
-        "Giao thông": streets,
-        "Vệ tinh": satellite
+    // Thêm lớp Google Satellite
+    const googleSat = L.gridLayer.googleMutant({
+      type: 'satellite' // Chế độ vệ tinh
     }).addTo(map);
 
+    // Điều khiển lớp bản đồ
+    const googleRoadmap = L.gridLayer.googleMutant({
+      type: 'roadmap' // Chế độ đường phố
+    });
+
+    const baseMaps = {
+      "Vệ tinh": googleSat,
+      "Đường phố": googleRoadmap
+    };
 
     // Thêm tile layer
     L.tileLayer('', {
@@ -62,4 +100,27 @@ $(document).ready(function () {
 
         L.marker([khu.lat, khu.lng], { icon: icon }).addTo(map);
     });
+
+    // Khởi tạo tuyến đường
+    L.Routing.control({
+        waypoints: [
+          L.latLng(10.562878467161077, 106.41832828251137), // Điểm bắt đầu
+          L.latLng(10.562878467161077, 106.41832828251137)  // Điểm đích
+        ],
+        routeWhileDragging: true,
+    }).addTo(map);
+
+    // Thay đổi tọa độ địa điểm bắt đầu khi người dùng double-click vào bản đồ
+    map.on('dblclick', function(e) {
+        e.originalEvent.preventDefault(); // Ngăn zoom mặc định
+        // Cập nhật điểm bắt đầu với tọa độ của điểm double-clicked
+        routingControl.setWaypoints([L.latLng(e.latlng.lat, e.latlng.lng), routingControl.getWaypoints()[1]]);
+      });
+  
+      // Điều chỉnh mức zoom khi người dùng double-click
+      map.on('dblclick', function() {
+        map.setZoom(map.getZoom()); // Duy trì mức zoom hiện tại
+      });
+
+    L.control.layers(baseMaps).addTo(map);
 })

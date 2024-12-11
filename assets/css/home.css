@@ -578,6 +578,19 @@
     font-weight: 500;
 }
 
+/**
+* MAP
+*/
+
+.leaflet-control-attribution a,
+.leaflet-control-attribution span {
+    display: none;
+}
+
+.leaflet-right {
+    display: none;
+}
+
 @media screen and (max-width: 1200px) {
     .news-list {
         grid-template-columns: repeat(2, 1fr);
