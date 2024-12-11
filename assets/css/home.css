@@ -157,6 +157,65 @@
     padding-top: 80px;
 }
 
+.list-news .pagination-custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.list-news .pagination-custom ul {
+    gap: 12px;
+}
+
+.list-news .pagination-custom ul li {
+    background-color: var(--white-color);
+    cursor: pointer;
+    border: 1px solid transparent;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    transition: all 0.3s linear;
+}
+
+.list-news .pagination-custom ul li:hover {
+    border: 1px solid var(--button-color);
+}
+
+.list-news .pagination-custom ul li a {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: #C8CCD1;
+    transition: all 0.3s linear;
+}
+
+.list-news .pagination-custom ul li:hover a {
+    color: var(--button-color);
+    font-weight: 500;
+}
+
+.list-news .pagination-custom ul li a svg {
+    filter: invert(67%) sepia(4%) saturate(3063%) hue-rotate(315deg) brightness(89%) contrast(75%);
+}
+
+.list-news .pagination-custom ul li.next,
+.list-news .pagination-custom ul li.previous {
+    border: 1px solid var(--button-color);
+}
+
+.list-news .pagination-custom ul li.next {
+    margin-left: 12px;
+}
+
+.list-news .pagination-custom ul li.previous {
+    margin-right: 12px;
+}
+
 /*
 * About
 */
@@ -796,5 +855,30 @@
 
     .popup-memos .popup-memos-item ul {
         gap: 2px;
+    }
+
+    /**
+    * PAGINATION
+    */
+
+    .list-news .pagination-custom ul li {
+        width: 32px;
+        height: 32px;
+    }
+
+    .list-news .pagination-custom ul {
+        gap: 6px;
+    }
+
+    .list-news .pagination-custom ul li.next {
+        margin-left: 6px;
+    }
+
+    .list-news .pagination-custom ul li.previous {
+        margin-right: 6px;
+    }
+
+    .list-news .pagination-custom ul li a {
+        line-height: 1;
     }
 }

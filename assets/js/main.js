@@ -102,7 +102,7 @@ $(document).ready(function () {
         let active;
         let pageCutLow = currentPage - 1;
         let pageCutHigh = currentPage + 1;
-    
+
         // Show the Previous button and disable it if on the first page
         str += `<li class="page-item previous ${currentPage === 1 ? 'disabled' : ''}">
                     <a href="#" data-page="${currentPage - 1}" ${currentPage === 1 ? 'tabindex="-1" aria-disabled="true"' : ''}>
@@ -111,7 +111,7 @@ $(document).ready(function () {
                         </svg>
                     </a>
                 </li>`;
-    
+
         // Show all the pagination elements if there are less than 6 pages total
         if (totalPages < 6) {
             for (let p = 1; p <= totalPages; p++) {
@@ -128,7 +128,7 @@ $(document).ready(function () {
                     str += `<li class="out-of-range"><a href="#" data-page="${currentPage - 2}">...</a></li>`;
                 }
             }
-    
+
             // Adjust page range to show before and after the current page
             if (currentPage === 1) {
                 pageCutHigh += 2;
@@ -140,16 +140,16 @@ $(document).ready(function () {
             } else if (currentPage === totalPages - 1) {
                 pageCutLow -= 1;
             }
-    
+
             // Output the indexes for pages that fall inside the range
             for (let p = pageCutLow; p <= pageCutHigh; p++) {
                 if (p <= 0) p = 1; // Prevent negative page numbers
                 if (p > totalPages) continue; // Skip pages that don't exist
-    
+
                 active = currentPage === p ? "active" : "inactive";
                 str += `<li class="page-item ${active}"><a href="#" data-page="${p}">${p}</a></li>`;
             }
-    
+
             // Show the very last page preceded by a "..." at the end of the pagination
             if (currentPage < totalPages - 1) {
                 if (currentPage < totalPages - 2) {
@@ -158,7 +158,7 @@ $(document).ready(function () {
                 str += `<li class="page-item inactive"><a href="#" data-page="${totalPages}">${totalPages}</a></li>`;
             }
         }
-    
+
         // Show the Next button and disable it if on the last page
         str += `<li class="page-item next ${currentPage === totalPages ? 'disabled' : ''}">
                     <a href="#" data-page="${currentPage + 1}" ${currentPage === totalPages ? 'tabindex="-1" aria-disabled="true"' : ''}>
@@ -167,23 +167,61 @@ $(document).ready(function () {
                         </svg>
                     </a>
                 </li>`;
-    
+
         str += '</ul>';
         container.innerHTML = str;
-    
+
         // Add event listeners for pagination links
         const pageLinks = container.querySelectorAll('a');
         pageLinks.forEach(link => {
             link.addEventListener('click', (event) => {
                 event.preventDefault();
+
+                // Kiểm tra nếu link thuộc phần tử bị vô hiệu hóa
+                const parent = link.parentElement;
+                if (parent.classList.contains('disabled')) {
+                    return; // Bỏ qua nếu bị disabled
+                }
+
                 const targetPage = parseInt(link.getAttribute('data-page'));
+                console.log(targetPage)
                 createPagination(totalPages, targetPage, container);
             });
         });
-    
+
         return str;
     }
-    
+
+    // PAGINATION NEWS
+
+    // Xử lý khi click vào các trang
+    $('.pagi-page').on('click', function () {
+        // Loại bỏ class 'active' khỏi trang hiện tại
+        $('.pagi-page.active').removeClass('active');
+        // Thêm class 'active' vào trang được chọn
+        $(this).addClass('active');
+    });
+
+    // Xử lý nút "Prev"
+    $('.pagi-prev').on('click', function () {
+        const current = $('.pagi-page.active');
+        const prev = current.prev('.pagi-page');
+        if (prev.length) {
+            current.removeClass('active');
+            prev.addClass('active');
+        }
+    });
+
+    // Xử lý nút "Next"
+    $('.pagi-next').on('click', function () {
+        const current = $('.pagi-page.active');
+        const next = current.next('.pagi-page');
+        if (next.length) {
+            current.removeClass('active');
+            next.addClass('active');
+        }
+    });
+
     // Initialize pagination for all elements with class 'pagination-custom'
     document.querySelectorAll('.pagination-custom').forEach(paginationElement => {
         const totalPages = parseInt(paginationElement.getAttribute('data-page')) || 1;  // data-page holds total number of pages
@@ -248,8 +286,8 @@ $(document).ready(function () {
             nextArrow: $nextArrow,
         });
     });
-    
-    $('.memos-item').click(function() {
+
+    $('.memos-item').click(function () {
         $(this).find('.popup-memos').addClass('active')
         $('.popup-blur').addClass('active')
     })
@@ -260,7 +298,7 @@ $(document).ready(function () {
         $('.popup-blur').removeClass('active')
     });
 
-    $('.btn-popup-memos').click(function() {
+    $('.btn-popup-memos').click(function () {
         let tdElement = $(this).parent()
 
         $(tdElement).find('.popup-memos').addClass('active')
@@ -269,7 +307,7 @@ $(document).ready(function () {
 
     // TABLE LIST
 
-    $('.filter-container .filter-toggle').click(function() {
+    $('.filter-container .filter-toggle').click(function () {
         $('.filter-container .filter-wrap').slideToggle()
     })
 
@@ -320,7 +358,7 @@ $(document).ready(function () {
         },
         messages: {
             visitorName: {
-                required: "Họ tên không được trống", 
+                required: "Họ tên không được trống",
             },
             phoneNumber: {
                 required: "SĐT không được trống",

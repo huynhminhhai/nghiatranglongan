@@ -249,6 +249,11 @@ select {
     color: #797979;
 }
 
+select:focus {
+    border: 1px solid;
+    outline: none;
+}
+
 .form-select {
     color: #797979;
 }
