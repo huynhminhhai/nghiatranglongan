@@ -11,7 +11,7 @@
     font-family: 'Roboto';
     src: url('../fonts/Roboto-Bold.woff2') format('woff2'),
         url('../fonts/Roboto-Bold.woff') format('woff');
-    font-weight: bold;
+    font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
@@ -29,11 +29,55 @@
     font-family: 'Roboto';
     src: url('../fonts/Roboto-Regular.woff2') format('woff2'),
         url('../fonts/Roboto-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Bold.woff2') format('woff2'),
+        url('../fonts/Montserrat-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Medium.woff2') format('woff2'),
+        url('../fonts/Montserrat-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Light.woff2') format('woff2'),
+        url('../fonts/Montserrat-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.woff2') format('woff2'),
+        url('../fonts/Montserrat-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-SemiBold.woff2') format('woff2'),
+        url('../fonts/Montserrat-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
 
 :root {
     --white-color: #fff;
@@ -41,8 +85,8 @@
     --red-color: #c5161d;
     --blue-color: #a01c10;
     --button-color: #bd8986;
-    --fs-h-1: 54px;
-    --lh-h-1: 64px;
+    --fs-h-1: 46px;
+    --lh-h-1: 56px;
     --fs-h-2: 32px;
     --lh-h-2: 40px;
     --fs-h-3: 24px;
@@ -63,7 +107,7 @@ ul {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     line-height: 22px;
     color: #222222;
@@ -78,7 +122,7 @@ a {
 h3,
 h2,
 h1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 0;
     font-weight: 700;
 }
@@ -113,6 +157,13 @@ input[type="number"] {
     font-size: var(--fs-h-5);
     line-height: 1;
     font-weight: 500;
+}
+
+.button .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1px;
 }
 
 .button .icon img,
@@ -228,7 +279,7 @@ input[type="number"] {
     position: absolute;
     top: 100%;
     left: 8px;
-    color: red;
+    color: #ed1c24;
     font-size: 14px;
 }
 
@@ -239,7 +290,7 @@ input[type="number"] {
 }
 
 .form-label span {
-    color: red;
+    color: #ed1c24;
 }
 
 .form-control,
@@ -291,7 +342,7 @@ select:focus {
     width: 150px;
     height: 150px;
     object-fit: cover;
-    border: 1px solid #ccc;
+    border: 1px solid #3c3c3c;
     border-radius: 5px;
 }
 

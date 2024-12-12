@@ -39,6 +39,8 @@ $(document).ready(function () {
         const passwordInput = $("#password");
         const toggleIcon = $(this).find(".toggle-icon");
 
+        $(this).toggleClass('active')
+
         // Toggle type giữa password và text
         if (passwordInput.attr("type") === "password") {
             passwordInput.attr("type", "text");

@@ -145,6 +145,7 @@
 .news-detail img {
     width: 100%;
     height: auto;
+    margin-bottom: 8px;
 }
 
 .news-detail .detail {
@@ -287,7 +288,8 @@
 }
 
 .memos .memos-item:hover {
-    box-shadow: 0px 8px 16px 0px rgba(0, 62, 68, 0.10);
+    /* box-shadow: 0px 8px 16px 0px rgba(0, 62, 68, 0.10); */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border: 1px solid #E4E5E8;
 }
 
@@ -314,7 +316,7 @@
 .memos .memos-item .infor {
     font-size: var(--fs-h-5);
     line-height: var(--lh-h-5);
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .memos .memos-item .infor ul {
@@ -323,13 +325,17 @@
     gap: 4px;
 }
 
+.memos .memos-item .infor ul li strong {
+    margin-right: 4px;
+}
+
 .memos .memos-seemore {
     background: #b78400;
     position: absolute;
     top: 0;
     right: 0;
     width: 11%;
-    height: 50%;
+    height: 46%;
     clip-path: polygon(100% 0, 0 0, 100% 100%);
     display: flex;
     justify-content: end;
@@ -389,7 +395,7 @@
 .popup-memos .popup-memos-item ul {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
     margin-top: 20px;
     text-align: start;
 }
@@ -576,7 +582,7 @@
 }
 
 .table-list .table td {
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .table-list .table td:last-child {
@@ -595,7 +601,7 @@
 
 .table-list .table th:first-child {
     text-align: center;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 /* .table-list .table {
