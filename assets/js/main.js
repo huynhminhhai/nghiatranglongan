@@ -308,6 +308,7 @@ $(document).ready(function () {
     // TABLE LIST
 
     $('.filter-container .filter-toggle').click(function () {
+        $(this).toggleClass('active')
         $('.filter-container .filter-wrap').slideToggle()
     })
 
